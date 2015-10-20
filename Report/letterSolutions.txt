@@ -1,0 +1,361 @@
+
+Solving Resources/puzzle1.txt using letter-based algorithm ...
+
+Root ->
+Position #9:
+E (0 0 0 0 0 0 0 0 E) ->
+Position #5:
+A (0 0 0 0 A 0 0 0 E) ->
+Position #3:
+E (0 0 E 0 A 0 0 0 E) ->
+Position #4:
+M (0 0 E M A 0 0 0 E) ->
+Position #7:
+D (0 0 E M A 0 D 0 E) ->
+Position #8:
+Y (0 0 E M A 0 D Y E) ->
+Position #1:
+N (N 0 E M A 0 D Y E) ->
+Position #2:
+N (N N E M A 0 D Y E) ->
+Position #6:
+N (N N E M A N D Y E) -> N N E M A N D Y E
+
+Number of invalid words tried: 6
+Times backtracked: 6
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+Position #4:
+S (0 0 E S A 0 0 0 E) ->
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+Position #9:
+W (0 0 0 S 0 0 0 0 W) ->
+
+Backtracking...
+
+['N N E M A N D Y E']
+All solutions: ['N N E M A N D Y E']
+
+
+Solving Resources/puzzle2.txt using letter-based algorithm ...
+
+Root ->
+Position #2:
+A (0 A 0 0 0 0 0 0 0) ->
+	Position #2:
+	D (0 D 0 0 0 0 0 0 0) ->
+	Position #2:
+	H (0 H 0 0 0 0 0 0 0) ->
+	Position #2:
+	S (0 S 0 0 0 0 0 0 0) ->
+Position #4:
+I (0 S 0 I 0 0 0 0 0) ->
+	Position #4:
+	A (0 S 0 A 0 0 0 0 0) ->
+Position #1:
+H (H S 0 A 0 0 0 0 0) ->
+Position #5:
+I (H S 0 A I 0 0 0 0) ->
+Position #6:
+W (H S 0 A I W 0 0 0) ->
+Position #9:
+S (H S 0 A I W 0 0 S) ->
+Position #3:
+I (H S I A I W 0 0 S) ->
+Position #7:
+N (H S I A I W N 0 S) ->
+Position #8:
+P (H S I A I W N P S) -> H S I A I W N P S
+
+Number of invalid words tried: 15
+Times backtracked: 9
+
+Position #8:
+R (H S I A I W N R S) ->
+	Position #8:
+	C (H S I A I W N C S) -> H S I A I W N C S
+
+Number of invalid words tried: 1
+Times backtracked: 0
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+Position #6:
+Y (H S 0 A I Y 0 0 0) ->
+
+Backtracking...
+
+
+Backtracking...
+
+Position #1:
+S (S S 0 A 0 Y 0 0 0) ->
+	Position #1:
+	Y (Y S 0 A 0 Y 0 0 0) ->
+
+Backtracking...
+
+Position #4:
+E (Y S 0 E 0 Y 0 0 0) ->
+	Position #4:
+	O (Y S 0 O 0 Y 0 0 0) ->
+Position #1:
+H (H S 0 O 0 Y 0 0 0) ->
+Position #5:
+I (H S 0 O I Y 0 0 0) ->
+Position #6:
+W (H S 0 O I W 0 0 0) ->
+Position #9:
+S (H S 0 O I W 0 0 S) ->
+Position #3:
+I (H S I O I W 0 0 S) ->
+Position #7:
+N (H S I O I W N 0 S) ->
+Position #8:
+P (H S I O I W N P S) ->
+Position #8:
+Y (H S I O I W N Y S) ->
+	Position #8:
+	N (H S I O I W N N S) ->
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+Position #1:
+W (W S 0 O 0 0 0 N 0) ->
+	Position #1:
+	Y (Y S 0 O 0 0 0 N 0) ->
+
+Backtracking...
+
+
+Backtracking...
+
+Position #2:
+T (Y T 0 0 0 0 0 N 0) ->
+
+Backtracking...
+
+['H S I A I W N P S', 'H S I A I W N C S']
+All solutions: ['H S I A I W N P S', 'H S I A I W N C S']
+
+
+Solving Resources/puzzle3.txt using letter-based algorithm ...
+
+Root ->
+Position #5:
+E (0 0 0 0 E 0 0) ->
+	Position #5:
+	O (0 0 0 0 O 0 0) ->
+	Position #5:
+	Y (0 0 0 0 Y 0 0) ->
+	Position #5:
+	T (0 0 0 0 T 0 0) ->
+	Position #5:
+	P (0 0 0 0 P 0 0) ->
+Position #1:
+A (A 0 0 0 P 0 0) ->
+Position #2:
+S (A S 0 0 P 0 0) ->
+Position #4:
+L (A S 0 L P 0 0) ->
+Position #6:
+E (A S 0 L P E 0) ->
+Position #7:
+A (A S 0 L P E A) ->
+Position #3:
+U (A S U L P E A) -> A S U L P E A
+
+Number of invalid words tried: 29
+Times backtracked: 16
+
+
+Backtracking...
+
+
+Backtracking...
+
+Position #6:
+I (A S 0 L P I 0) ->
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+['A S U L P E A']
+All solutions: ['A S U L P E A']
+
+
+Solving Resources/puzzle4.txt using letter-based algorithm ...
+
+Root ->
+Position #1:
+A (A 0 0 0 0 0 0 0) ->
+	Position #1:
+	F (F 0 0 0 0 0 0 0) ->
+	Position #1:
+	H (H 0 0 0 0 0 0 0) ->
+Position #2:
+E (H E 0 0 0 0 0 0) ->
+Position #4:
+I (H E 0 I 0 0 0 0) ->
+Position #8:
+E (H E 0 I 0 0 0 E) ->
+Position #6:
+Y (H E 0 I 0 Y 0 E) ->
+Position #7:
+R (H E 0 I 0 Y R E) ->
+Position #3:
+D (H E D I 0 Y R E) ->
+Position #5:
+T (H E D I T Y R E) -> H E D I T Y R E
+
+Number of invalid words tried: 10
+Times backtracked: 7
+
+
+Backtracking...
+
+Position #3:
+T (H E T I 0 Y R E) ->
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+Position #1:
+W (W 0 T 0 0 0 0 0) ->
+
+Backtracking...
+
+['H E D I T Y R E']
+All solutions: ['H E D I T Y R E']
+
+
+Solving Resources/puzzle5.txt using letter-based algorithm ...
+
+Root ->
+Position #9:
+N (0 0 0 0 0 0 0 0 N) ->
+Position #8:
+E (0 0 0 0 0 0 0 E N) ->
+Position #6:
+O (0 0 0 0 0 O 0 E N) ->
+Position #3:
+T (0 0 T 0 0 O 0 E N) ->
+Position #4:
+T (0 0 T T 0 O 0 E N) ->
+Position #7:
+I (0 0 T T 0 O I E N) ->
+Position #1:
+I (I 0 T T 0 O I E N) ->
+Position #2:
+H (I H T T 0 O I E N) ->
+Position #5:
+N (I H T T N O I E N) -> I H T T N O I E N
+
+Number of invalid words tried: 10
+Times backtracked: 8
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+['I H T T N O I E N']
+All solutions: ['I H T T N O I E N']
+
+
+
+Process finished with exit code 0
