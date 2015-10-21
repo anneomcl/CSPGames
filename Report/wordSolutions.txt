@@ -1,41 +1,61 @@
 
-Solving Resources/puzzle1.txt using word-based algorithm ...
 
-Root ->
-adverb:
-NAE (N 0 0 0 A 0 0 0 E) ->
-body:
-EYE (N 0 E 0 A 0 0 Y E) ->
-verb:
-DYE (N 0 E 0 A 0 D Y E) ->
-adjective:
-NEE (N N E 0 A 0 D Y E) ->
-emotion:
-MAD (N N E M A 0 D Y E) ->
-interjection:
+Root -> 
+adverb: 
+NAE (N 0 0 0 A 0 0 0 E) -> 
+body: 
+EYE (N 0 E 0 A 0 0 Y E) -> 
+verb: 
+DYE (N 0 E 0 A 0 D Y E) -> 
+adjective: 
+NEE (N N E 0 A 0 D Y E) -> 
+emotion: 
+MAD (N N E M A 0 D Y E) -> 
+interjection: 
 MAN (N N E M A N D Y E) -> N N E M A N D Y E
 
-Number of invalid words tried: 0
-Times backtracked: 0
+Solution Found: N N E M A N D Y E
 
 
 Backtracking...
 
-emotion:
-SAD (N N E S A 0 D Y E) ->
+emotion: 
+SAD (N N E S A 0 D Y E) -> 
+interjection: 
+SAY (N N E S A Y D Y E) -> N N E S A Y D Y E
+
+Solution Found: N N E S A Y D Y E
+
 
 Backtracking...
 
-adjective:
-WEE (N W E 0 0 0 0 Y E) ->
-emotion:
-MAD (N W E M A 0 D Y E) ->
-interjection:
+
+Backtracking...
+
+adjective: 
+WEE (N W E 0 0 0 0 Y E) -> 
+emotion: 
+MAD (N W E M A 0 D Y E) -> 
+interjection: 
 MAN (N W E M A N D Y E) -> N W E M A N D Y E
 
-Number of invalid words tried: 3
-Times backtracked: 2
+Solution Found: N W E M A N D Y E
 
+
+Backtracking...
+
+emotion: 
+SAD (N W E S A 0 D Y E) -> 
+interjection: 
+SAY (N W E S A Y D Y E) -> N W E S A Y D Y E
+
+Solution Found: N W E S A Y D Y E
+
+
+Backtracking...
+
+emotion: 
+WOE (N W E W O 0 E Y E) -> 
 
 Backtracking...
 
@@ -45,60 +65,55 @@ Backtracking...
 
 Backtracking...
 
+body: 
+TOE (N 0 T 0 0 0 0 O E) -> 
 
 Backtracking...
 
-body:
-TOE (N 0 T 0 0 0 0 O E) ->
+adverb: 
+NAW (N 0 0 0 A 0 0 0 W) -> 
 
 Backtracking...
-
-adverb:
-NAW (N 0 0 0 A 0 0 0 W) ->
-
-Backtracking...
-
-All solutions: ['N N E M A N D Y E', 'N W E M A N D Y E']
+All solutions: ['N N E M A N D Y E', 'N N E S A Y D Y E', 'N W E M A N D Y E', 'N W E S A Y D Y E']
 
 
 Solving Resources/puzzle2.txt using word-based algorithm ...
 
-Root ->
-verb:
-ACE (0 A 0 C 0 E 0 0 0) ->
-	verb:
-	ACT (0 A 0 C 0 T 0 0 0) ->
-	verb:
-	ASK (0 A 0 S 0 K 0 0 0) ->
-	verb:
-	DAM (0 D 0 A 0 M 0 0 0) ->
-	verb:
-	DIE (0 D 0 I 0 E 0 0 0) ->
-	verb:
-	DIP (0 D 0 I 0 P 0 0 0) ->
-	verb:
-	DYE (0 D 0 Y 0 E 0 0 0) ->
-	verb:
-	HIT (0 H 0 I 0 T 0 0 0) ->
-	verb:
-	HOP (0 H 0 O 0 P 0 0 0) ->
-	verb:
-	HUM (0 H 0 U 0 M 0 0 0) ->
-	verb:
-	SAW (0 S 0 A 0 W 0 0 0) ->
-noun:
-SAC (0 S 0 A 0 W 0 C 0) ->
-palindrome:
-SIS (0 S 0 A I W 0 C S) ->
-interjection:
-HAW (H S 0 A I W 0 C S) ->
-math:
-SIN (H S 0 A I W N C S) ->
-pronoun:
+Root -> 
+verb: 
+ACE (0 A 0 C 0 E 0 0 0) -> 
+	verb: 
+	ACT (0 A 0 C 0 T 0 0 0) -> 
+	verb: 
+	ASK (0 A 0 S 0 K 0 0 0) -> 
+	verb: 
+	DAM (0 D 0 A 0 M 0 0 0) -> 
+	verb: 
+	DIE (0 D 0 I 0 E 0 0 0) -> 
+	verb: 
+	DIP (0 D 0 I 0 P 0 0 0) -> 
+	verb: 
+	DYE (0 D 0 Y 0 E 0 0 0) -> 
+	verb: 
+	HIT (0 H 0 I 0 T 0 0 0) -> 
+	verb: 
+	HOP (0 H 0 O 0 P 0 0 0) -> 
+	verb: 
+	HUM (0 H 0 U 0 M 0 0 0) -> 
+	verb: 
+	SAW (0 S 0 A 0 W 0 0 0) -> 
+noun: 
+SAC (0 S 0 A 0 W 0 C 0) -> 
+palindrome: 
+SIS (0 S 0 A I W 0 C S) -> 
+interjection: 
+HAW (H S 0 A I W 0 C S) -> 
+math: 
+SIN (H S 0 A I W N C S) -> 
+pronoun: 
 HIS (H S I A I W N C S) -> H S I A I W N C S
 
-Number of invalid words tried: 18
-Times backtracked: 6
+Solution Found: H S I A I W N C S
 
 
 Backtracking...
@@ -112,38 +127,115 @@ Backtracking...
 
 Backtracking...
 
-noun:
-SAP (0 S 0 A 0 0 0 P 0) ->
+noun: 
+SAP (0 S 0 A 0 0 0 P 0) -> 
+palindrome: 
+SIS (0 S 0 A I 0 0 P S) -> 
+interjection: 
+HAW (H S 0 A I W 0 P S) -> 
+math: 
+SIN (H S 0 A I W N P S) -> 
+pronoun: 
+HIS (H S I A I W N P S) -> H S I A I W N P S
+
+Solution Found: H S I A I W N P S
+
 
 Backtracking...
 
-verb:
-SAY (0 S 0 A 0 Y 0 0 0) ->
-	verb:
-	SET (0 S 0 E 0 T 0 0 0) ->
-	verb:
-	SEW (0 S 0 E 0 W 0 0 0) ->
-	verb:
-	SIN (0 S 0 I 0 N 0 0 0) ->
-	verb:
-	SIP (0 S 0 I 0 P 0 0 0) ->
-	verb:
-	SIT (0 S 0 I 0 T 0 0 0) ->
-	verb:
-	SOW (0 S 0 O 0 W 0 0 0) ->
-noun:
-SOD (0 S 0 O 0 W 0 D 0) ->
-palindrome:
-SIS (0 S 0 O I W 0 D S) ->
-interjection:
-HOW (H S 0 O I W 0 D S) ->
-math:
-SIN (H S 0 O I W N D S) ->
-pronoun:
+
+Backtracking...
+
+interjection: 
+SAY (S 0 0 A 0 Y 0 P 0) -> 
+math: 
+DAG (S D 0 A A Y G P 0) -> 
+	math: 
+	SEC (S S 0 A E Y C P 0) -> 
+	math: 
+	SET (S S 0 A E Y T P 0) -> 
+	math: 
+	SIN (S S 0 A I Y N P 0) -> 
+pronoun: 
+SHE (S S H A I Y N P E) -> 
+
+Backtracking...
+
+math: 
+SUM (S S 0 A U Y M P 0) -> 
+	math: 
+	TAN (S T 0 A A Y N P 0) -> 
+
+Backtracking...
+
+interjection: 
+YAY (Y 0 0 A 0 Y 0 P 0) -> 
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+verb: 
+SAY (0 S 0 A 0 Y 0 0 0) -> 
+noun: 
+SAC (0 S 0 A 0 Y 0 C 0) -> 
+palindrome: 
+SIS (0 S 0 A I Y 0 C S) -> 
+interjection: 
+SAY (S S 0 A I Y 0 C S) -> 
+	interjection: 
+	YAY (Y S 0 A I Y 0 C S) -> 
+
+Backtracking...
+
+
+Backtracking...
+
+noun: 
+SAP (0 S 0 A 0 Y 0 P 0) -> 
+palindrome: 
+SIS (0 S 0 A I Y 0 P S) -> 
+interjection: 
+SAY (S S 0 A I Y 0 P S) -> 
+	interjection: 
+	YAY (Y S 0 A I Y 0 P S) -> 
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+verb: 
+SET (0 S 0 E 0 T 0 0 0) -> 
+	verb: 
+	SEW (0 S 0 E 0 W 0 0 0) -> 
+	verb: 
+	SIN (0 S 0 I 0 N 0 0 0) -> 
+	verb: 
+	SIP (0 S 0 I 0 P 0 0 0) -> 
+	verb: 
+	SIT (0 S 0 I 0 T 0 0 0) -> 
+	verb: 
+	SOW (0 S 0 O 0 W 0 0 0) -> 
+noun: 
+SOD (0 S 0 O 0 W 0 D 0) -> 
+palindrome: 
+SIS (0 S 0 O I W 0 D S) -> 
+interjection: 
+HOW (H S 0 O I W 0 D S) -> 
+math: 
+SIN (H S 0 O I W N D S) -> 
+pronoun: 
 HIS (H S I O I W N D S) -> H S I O I W N D S
 
-Number of invalid words tried: 12
-Times backtracked: 5
+Solution Found: H S I O I W N D S
 
 
 Backtracking...
@@ -151,53 +243,78 @@ Backtracking...
 
 Backtracking...
 
-interjection:
-WOW (W 0 0 O 0 W 0 D 0) ->
-	interjection:
-	YOW (Y 0 0 O 0 W 0 D 0) ->
+interjection: 
+WOW (W 0 0 O 0 W 0 D 0) -> 
+	interjection: 
+	YOW (Y 0 0 O 0 W 0 D 0) -> 
 
 Backtracking...
 
 
 Backtracking...
 
-noun:
-SOY (0 S 0 O 0 0 0 Y 0) ->
+noun: 
+SOY (0 S 0 O 0 0 0 Y 0) -> 
+palindrome: 
+SIS (0 S 0 O I 0 0 Y S) -> 
+interjection: 
+HOW (H S 0 O I W 0 Y S) -> 
+math: 
+SIN (H S 0 O I W N Y S) -> 
+pronoun: 
+HIS (H S I O I W N Y S) -> H S I O I W N Y S
+
+Solution Found: H S I O I W N Y S
+
 
 Backtracking...
 
-verb:
-TAP (0 T 0 A 0 P 0 0 0) ->
-	verb:
-	TIE (0 T 0 I 0 E 0 0 0) ->
-	verb:
-	TIP (0 T 0 I 0 P 0 0 0) ->
-	verb:
-	TOW (0 T 0 O 0 W 0 0 0) ->
 
 Backtracking...
 
-All solutions: ['H S I A I W N C S', 'H S I O I W N D S']
+interjection: 
+WOW (W 0 0 O 0 W 0 Y 0) -> 
+	interjection: 
+	YOW (Y 0 0 O 0 W 0 Y 0) -> 
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+verb: 
+TAP (0 T 0 A 0 P 0 0 0) -> 
+	verb: 
+	TIE (0 T 0 I 0 E 0 0 0) -> 
+	verb: 
+	TIP (0 T 0 I 0 P 0 0 0) -> 
+	verb: 
+	TOW (0 T 0 O 0 W 0 0 0) -> 
+
+Backtracking...
+All solutions: ['H S I A I W N C S', 'H S I A I W N P S', 'H S I O I W N D S', 'H S I O I W N Y S']
 
 
 Solving Resources/puzzle3.txt using word-based algorithm ...
 
-Root ->
-animal:
-ANT (A N 0 0 T 0 0) ->
-	animal:
-	APE (A P 0 0 E 0 0) ->
-	animal:
-	ASP (A S 0 0 P 0 0) ->
-food:
-PEA (A S 0 0 P E A) ->
-nature:
-ALP (A S 0 L P E A) ->
-interjection:
+Root -> 
+animal: 
+ANT (A N 0 0 T 0 0) -> 
+	animal: 
+	APE (A P 0 0 E 0 0) -> 
+	animal: 
+	ASP (A S 0 0 P 0 0) -> 
+food: 
+PEA (A S 0 0 P E A) -> 
+nature: 
+ALP (A S 0 L P E A) -> 
+interjection: 
 SUP (A S U L P E A) -> A S U L P E A
 
-Number of invalid words tried: 15
-Times backtracked: 6
+Solution Found: A S U L P E A
 
 
 Backtracking...
@@ -205,63 +322,80 @@ Backtracking...
 
 Backtracking...
 
-food:
-PIE (0 0 0 0 P I E) ->
+food: 
+PIE (0 0 0 0 P I E) -> 
+nature: 
+ALP (A 0 0 L P I E) -> 
+interjection: 
+SUP (A S U L P I E) -> A S U L P I E
+
+Solution Found: A S U L P I E
+
+interjection: 
+ZAP (A Z A L P I E) -> 
 
 Backtracking...
 
-animal:
-BAT (B A 0 0 T 0 0) ->
-	animal:
-	BEE (B E 0 0 E 0 0) ->
-	animal:
-	DOE (D O 0 0 E 0 0) ->
-	animal:
-	DZO (D Z 0 0 O 0 0) ->
-	animal:
-	EWE (E W 0 0 E 0 0) ->
-	animal:
-	JAY (J A 0 0 Y 0 0) ->
-	animal:
-	PUP (P U 0 0 P 0 0) ->
-	animal:
-	RAT (R A 0 0 T 0 0) ->
-	animal:
-	RAY (R A 0 0 Y 0 0) ->
-	animal:
-	ZHO (Z H 0 0 O 0 0) ->
 
 Backtracking...
 
-All solutions: ['A S U L P E A']
+
+Backtracking...
+
+animal: 
+BAT (B A 0 0 T 0 0) -> 
+	animal: 
+	BEE (B E 0 0 E 0 0) -> 
+	animal: 
+	DOE (D O 0 0 E 0 0) -> 
+	animal: 
+	DZO (D Z 0 0 O 0 0) -> 
+	animal: 
+	EWE (E W 0 0 E 0 0) -> 
+	animal: 
+	JAY (J A 0 0 Y 0 0) -> 
+	animal: 
+	PUP (P U 0 0 P 0 0) -> 
+	animal: 
+	RAT (R A 0 0 T 0 0) -> 
+	animal: 
+	RAY (R A 0 0 Y 0 0) -> 
+	animal: 
+	ZHO (Z H 0 0 O 0 0) -> 
+
+Backtracking...
+All solutions: ['A S U L P E A', 'A S U L P I E']
 
 
 Solving Resources/puzzle4.txt using word-based algorithm ...
 
-Root ->
-body:
-EAR (0 E 0 0 0 A 0 R) ->
-	body:
-	EYE (0 E 0 0 0 Y 0 E) ->
-interjection:
-HEY (H E 0 0 0 Y 0 E) ->
-noun:
-IRE (H E 0 I 0 Y R E) ->
-pronoun:
-HER (H E 0 I 0 Y R E) ->
-computer:
-HIT (H E 0 I T Y R E) ->
-verb:
+Root -> 
+body: 
+EAR (0 E 0 0 0 A 0 R) -> 
+	body: 
+	EYE (0 E 0 0 0 Y 0 E) -> 
+interjection: 
+HEY (H E 0 0 0 Y 0 E) -> 
+noun: 
+IRE (H E 0 I 0 Y R E) -> 
+pronoun: 
+HER (H E 0 I 0 Y R E) -> 
+computer: 
+HIT (H E 0 I T Y R E) -> 
+verb: 
 DIE (H E D I T Y R E) -> H E D I T Y R E
 
-Number of invalid words tried: 16
-Times backtracked: 4
+Solution Found: H E D I T Y R E
 
-verb:
+verb: 
+LIE (H E L I T Y R E) -> H E L I T Y R E
+
+Solution Found: H E L I T Y R E
+
+verb: 
 TIE (H E T I T Y R E) -> H E T I T Y R E
 
-Number of invalid words tried: 0
-Times backtracked: 0
+Solution Found: H E T I T Y R E
 
 
 Backtracking...
@@ -272,10 +406,10 @@ Backtracking...
 
 Backtracking...
 
-noun:
-RYE (0 0 0 R 0 Y Y E) ->
-	noun:
-	USE (0 0 0 U 0 Y S E) ->
+noun: 
+RYE (0 0 0 R 0 Y Y E) -> 
+	noun: 
+	USE (0 0 0 U 0 Y S E) -> 
 
 Backtracking...
 
@@ -284,28 +418,31 @@ Backtracking...
 
 
 Backtracking...
-
-All solutions: ['H E D I T Y R E', 'H E T I T Y R E']
+All solutions: ['H E D I T Y R E', 'H E L I T Y R E', 'H E T I T Y R E']
 
 
 Solving Resources/puzzle5.txt using word-based algorithm ...
 
-Root ->
-number:
-TEN (0 0 T 0 0 0 0 E N) ->
-animal:
-HEN (0 H T 0 0 0 0 E N) ->
-adverb:
-NON (0 H T 0 N O 0 E N) ->
-body:
-TOE (0 H T T N O 0 E N) ->
-container:
-TIN (0 H T T N O I E N) ->
-noun:
+Root -> 
+number: 
+TEN (0 0 T 0 0 0 0 E N) -> 
+animal: 
+HEN (0 H T 0 0 0 0 E N) -> 
+adverb: 
+NON (0 H T 0 N O 0 E N) -> 
+body: 
+TOE (0 H T T N O 0 E N) -> 
+container: 
+TIN (0 H T T N O I E N) -> 
+noun: 
 ION (I H T T N O I E N) -> I H T T N O I E N
 
-Number of invalid words tried: 8
-Times backtracked: 6
+Solution Found: I H T T N O I E N
+
+noun: 
+TON (T H T T N O I E N) -> T H T T N O I E N
+
+Solution Found: T H T T N O I E N
 
 
 Backtracking...
@@ -316,19 +453,23 @@ Backtracking...
 
 Backtracking...
 
-adverb:
-SYN (0 H T 0 S Y 0 0 N) ->
-	adverb:
-	YON (0 H T 0 Y O 0 0 N) ->
-body:
-TOE (0 H T T Y O 0 E N) ->
-container:
-TIN (0 H T T Y O I E N) ->
-noun:
+adverb: 
+SYN (0 H T 0 S Y 0 0 N) -> 
+	adverb: 
+	YON (0 H T 0 Y O 0 0 N) -> 
+body: 
+TOE (0 H T T Y O 0 E N) -> 
+container: 
+TIN (0 H T T Y O I E N) -> 
+noun: 
 ION (I H T T Y O I E N) -> I H T T Y O I E N
 
-Number of invalid words tried: 4
-Times backtracked: 3
+Solution Found: I H T T Y O I E N
+
+noun: 
+TON (T H T T Y O I E N) -> T H T T Y O I E N
+
+Solution Found: T H T T Y O I E N
 
 
 Backtracking...
@@ -347,5 +488,4 @@ Backtracking...
 
 
 Backtracking...
-
-All solutions: ['I H T T N O I E N', 'I H T T Y O I E N']
+All solutions: ['I H T T N O I E N', 'T H T T N O I E N', 'I H T T Y O I E N', 'T H T T Y O I E N']

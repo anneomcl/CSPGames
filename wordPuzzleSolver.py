@@ -236,17 +236,19 @@ def recursive_backtracking_letter(assignment, csp):
                 sol = copy.deepcopy(result)
                 wordSolutions.append((' ').join(sol))
                 print((' ').join(sol))
+                print("Solution Found: " + (' ').join(sol))
                 global number
-                print("\nNumber of invalid words tried: " + str(number))
+                #print("\nNumber of invalid words tried: " + str(number))
                 global numberS
-                print("Times backtracked: " + str(numberS))
+                #print("Times backtracked: " + str(numberS))
+                bestLetters = findAllValidLetters(assignment, csp)
                 number = 0
                 numberS = 0
 
             assignment[var - 1] = '0'
             bestLetters[var].remove(value)
 
-
+    bestLetters = findAllValidLetters(assignment, csp)
     priority = -1*len(constraintsPerIndex[var])
     heapq.heappush(varHeap, (priority, var))
     reportFailure()
@@ -367,17 +369,20 @@ def recursive_backtracking_word(assignment, csp):
                 wordSolutions.append((' ').join(sol))
                 print((' ').join(sol))
                 global number
-                print("\nNumber of invalid words tried: " + str(number))
+                print("\nSolution Found: " + (' ').join(sol))
+                #print("Number of invalid words tried: " + str(number))
                 global numberS
-                print("Times backtracked: " + str(numberS))
+                #print("Times backtracked: " + str(numberS))
                 number = 0
                 numberS = 0
+                bestWords = selectBestValuesWord(assignment,csp)
             i = 0
             while(i < 3):
                 assignment[csp[var][i] - 1] = '0'
                 i+=1
             bestWords[var].remove(value)
 
+    bestWords = selectBestValuesWord(assignment,csp)
     print("\n\n" + "Backtracking...")
     global numberS
     numberS +=1
@@ -449,10 +454,10 @@ def solve(puzzle, mode):
     if(mode == "letter"):
         result = recursive_backtracking_letter(assignment, p[1])
         print((' ').join(result))
-        print(wordSolutions)
+        #print(wordSolutions)
     if(mode == "word"):
         result = recursive_backtracking_word(assignment, p[1])
-        print((' ').join(result))
+        #print((' ').join(result))
 
     print("All solutions: " + str(wordSolutions)+ "\n\n")
 
@@ -486,11 +491,11 @@ fail = 0
 
 wordList = wordlist_to_data()
 
-solve("Resources/puzzle1.txt", "word")
+'''solve("Resources/puzzle1.txt", "word")
 solve("Resources/puzzle2.txt", "word")
 solve("Resources/puzzle3.txt", "word")
 solve("Resources/puzzle4.txt", "word")
-solve("Resources/puzzle5.txt", "word")
+solve("Resources/puzzle5.txt", "word")'''
 solve("Resources/puzzle1.txt", "letter")
 solve("Resources/puzzle2.txt", "letter")
 solve("Resources/puzzle3.txt", "letter")

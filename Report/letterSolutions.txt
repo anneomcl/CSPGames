@@ -1,29 +1,60 @@
 
 Solving Resources/puzzle1.txt using letter-based algorithm ...
 
-Root ->
-Position #9:
-E (0 0 0 0 0 0 0 0 E) ->
-Position #5:
-A (0 0 0 0 A 0 0 0 E) ->
-Position #3:
-E (0 0 E 0 A 0 0 0 E) ->
-Position #4:
-M (0 0 E M A 0 0 0 E) ->
-Position #7:
-D (0 0 E M A 0 D 0 E) ->
-Position #8:
-Y (0 0 E M A 0 D Y E) ->
-Position #1:
-N (N 0 E M A 0 D Y E) ->
-Position #2:
-N (N N E M A 0 D Y E) ->
-Position #6:
+Root -> 
+Position #9: 
+W (0 0 0 0 0 0 0 0 W) -> 
+	Position #9: 
+	E (0 0 0 0 0 0 0 0 E) -> 
+Position #5: 
+A (0 0 0 0 A 0 0 0 E) -> 
+Position #3: 
+E (0 0 E 0 A 0 0 0 E) -> 
+Position #4: 
+M (0 0 E M A 0 0 0 E) -> 
+Position #7: 
+D (0 0 E M A 0 D 0 E) -> 
+Position #8: 
+Y (0 0 E M A 0 D Y E) -> 
+Position #1: 
+N (N 0 E M A 0 D Y E) -> 
+Position #2: 
+N (N N E M A 0 D Y E) -> 
+Position #6: 
 N (N N E M A N D Y E) -> N N E M A N D Y E
+Solution Found: N N E M A N D Y E
 
-Number of invalid words tried: 6
-Times backtracked: 6
 
+Backtracking...
+
+Position #2: 
+W (N W E M A 0 D Y E) -> 
+Position #6: 
+H (N W E M A H D Y E) -> 
+Position #6: 
+A (N W E M A A D Y E) -> 
+	Position #6: 
+	E (N W E M A E D Y E) -> 
+	Position #6: 
+	M (N W E M A M D Y E) -> 
+	Position #6: 
+	O (N W E M A O D Y E) -> 
+	Position #6: 
+	W (N W E M A W D Y E) -> 
+	Position #6: 
+	Y (N W E M A Y D Y E) -> 
+	Position #6: 
+	N (N W E M A N D Y E) -> N W E M A N D Y E
+Solution Found: N W E M A N D Y E
+
+	Position #6: 
+	T (N W E M A T D Y E) -> 
+	Position #6: 
+	F (N W E M A F D Y E) -> 
+	Position #6: 
+	P (N W E M A P D Y E) -> 
+	Position #6: 
+	Z (N W E M A Z D Y E) -> 
 
 Backtracking...
 
@@ -39,8 +70,73 @@ Backtracking...
 
 Backtracking...
 
-Position #4:
-S (0 0 E S A 0 0 0 E) ->
+Position #4: 
+S (0 0 E S A Z 0 0 E) -> 
+Position #7: 
+D (0 0 E S A Z D 0 E) -> 
+Position #8: 
+I (0 0 E S A Z D I E) -> 
+	Position #8: 
+	Y (0 0 E S A Z D Y E) -> 
+Position #1: 
+A (A 0 E S A Z D Y E) -> 
+	Position #1: 
+	N (N 0 E S A Z D Y E) -> 
+Position #2: 
+A (N A E S A Z D Y E) -> 
+	Position #2: 
+	B (N B E S A Z D Y E) -> 
+	Position #2: 
+	C (N C E S A Z D Y E) -> 
+	Position #2: 
+	D (N D E S A Z D Y E) -> 
+	Position #2: 
+	F (N F E S A Z D Y E) -> 
+	Position #2: 
+	H (N H E S A Z D Y E) -> 
+	Position #2: 
+	I (N I E S A Z D Y E) -> 
+	Position #2: 
+	L (N L E S A Z D Y E) -> 
+	Position #2: 
+	M (N M E S A Z D Y E) -> 
+	Position #2: 
+	N (N N E S A Z D Y E) -> 
+Position #6: 
+Y (N N E S A Y D Y E) -> N N E S A Y D Y E
+Solution Found: N N E S A Y D Y E
+
+
+Backtracking...
+
+Position #2: 
+O (N O E S A 0 D Y E) -> 
+	Position #2: 
+	R (N R E S A 0 D Y E) -> 
+	Position #2: 
+	S (N S E S A 0 D Y E) -> 
+	Position #2: 
+	W (N W E S A 0 D Y E) -> 
+Position #6: 
+Y (N W E S A Y D Y E) -> N W E S A Y D Y E
+Solution Found: N W E S A Y D Y E
+
+
+Backtracking...
+
+
+Backtracking...
+
+Position #1: 
+O (O 0 E S A 0 D Y E) -> 
+	Position #1: 
+	P (P 0 E S A 0 D Y E) -> 
+	Position #1: 
+	Q (Q 0 E S A 0 D Y E) -> 
+	Position #1: 
+	S (S 0 E S A 0 D Y E) -> 
+	Position #1: 
+	Y (Y 0 E S A 0 D Y E) -> 
 
 Backtracking...
 
@@ -50,55 +146,63 @@ Backtracking...
 
 Backtracking...
 
-Position #9:
-W (0 0 0 S 0 0 0 0 W) ->
 
 Backtracking...
 
-['N N E M A N D Y E']
-All solutions: ['N N E M A N D Y E']
+
+Backtracking...
+
+
+Backtracking...
+
+
+Backtracking...
+
+All solutions: ['N N E M A N D Y E', 'N W E M A N D Y E', 'N N E S A Y D Y E', 'N W E S A Y D Y E']
 
 
 Solving Resources/puzzle2.txt using letter-based algorithm ...
 
-Root ->
-Position #2:
-A (0 A 0 0 0 0 0 0 0) ->
-	Position #2:
-	D (0 D 0 0 0 0 0 0 0) ->
-	Position #2:
-	H (0 H 0 0 0 0 0 0 0) ->
-	Position #2:
-	S (0 S 0 0 0 0 0 0 0) ->
-Position #4:
-I (0 S 0 I 0 0 0 0 0) ->
-	Position #4:
-	A (0 S 0 A 0 0 0 0 0) ->
-Position #1:
-H (H S 0 A 0 0 0 0 0) ->
-Position #5:
-I (H S 0 A I 0 0 0 0) ->
-Position #6:
-W (H S 0 A I W 0 0 0) ->
-Position #9:
-S (H S 0 A I W 0 0 S) ->
-Position #3:
-I (H S I A I W 0 0 S) ->
-Position #7:
-N (H S I A I W N 0 S) ->
-Position #8:
-P (H S I A I W N P S) -> H S I A I W N P S
+Root -> 
+Position #2: 
+A (0 A 0 0 0 0 0 0 0) -> 
+	Position #2: 
+	D (0 D 0 0 0 0 0 0 0) -> 
+	Position #2: 
+	H (0 H 0 0 0 0 0 0 0) -> 
+	Position #2: 
+	S (0 S 0 0 0 0 0 0 0) -> 
+Position #4: 
+A (0 S 0 A 0 0 0 0 0) -> 
+Position #1: 
+H (H S 0 A 0 0 0 0 0) -> 
+Position #5: 
+I (H S 0 A I 0 0 0 0) -> 
+Position #6: 
+W (H S 0 A I W 0 0 0) -> 
+Position #9: 
+S (H S 0 A I W 0 0 S) -> 
+Position #3: 
+I (H S I A I W 0 0 S) -> 
+Position #7: 
+N (H S I A I W N 0 S) -> 
+Position #8: 
+T (H S I A I W N T S) -> 
+	Position #8: 
+	M (H S I A I W N M S) -> 
+	Position #8: 
+	P (H S I A I W N P S) -> H S I A I W N P S
+Solution Found: H S I A I W N P S
 
-Number of invalid words tried: 15
-Times backtracked: 9
-
-Position #8:
-R (H S I A I W N R S) ->
-	Position #8:
+	Position #8: 
+	D (H S I A I W N D S) -> 
+	Position #8: 
+	Y (H S I A I W N Y S) -> 
+	Position #8: 
+	R (H S I A I W N R S) -> 
+	Position #8: 
 	C (H S I A I W N C S) -> H S I A I W N C S
-
-Number of invalid words tried: 1
-Times backtracked: 0
+Solution Found: H S I A I W N C S
 
 
 Backtracking...
@@ -112,43 +216,16 @@ Backtracking...
 
 Backtracking...
 
-Position #6:
-Y (H S 0 A I Y 0 0 0) ->
-
-Backtracking...
-
-
-Backtracking...
-
-Position #1:
-S (S S 0 A 0 Y 0 0 0) ->
-	Position #1:
-	Y (Y S 0 A 0 Y 0 0 0) ->
-
-Backtracking...
-
-Position #4:
-E (Y S 0 E 0 Y 0 0 0) ->
-	Position #4:
-	O (Y S 0 O 0 Y 0 0 0) ->
-Position #1:
-H (H S 0 O 0 Y 0 0 0) ->
-Position #5:
-I (H S 0 O I Y 0 0 0) ->
-Position #6:
-W (H S 0 O I W 0 0 0) ->
-Position #9:
-S (H S 0 O I W 0 0 S) ->
-Position #3:
-I (H S I O I W 0 0 S) ->
-Position #7:
-N (H S I O I W N 0 S) ->
-Position #8:
-P (H S I O I W N P S) ->
-Position #8:
-Y (H S I O I W N Y S) ->
-	Position #8:
-	N (H S I O I W N N S) ->
+Position #6: 
+Y (H S 0 A I Y 0 0 0) -> 
+Position #9: 
+W (H S 0 A I Y 0 0 W) -> 
+	Position #9: 
+	S (H S 0 A I Y 0 0 S) -> 
+	Position #9: 
+	M (H S 0 A I Y 0 0 M) -> 
+	Position #9: 
+	E (H S 0 A I Y 0 0 E) -> 
 
 Backtracking...
 
@@ -158,6 +235,56 @@ Backtracking...
 
 Backtracking...
 
+Position #1: 
+S (S S 0 A 0 0 0 0 E) -> 
+Position #5: 
+A (S S 0 A A 0 0 0 E) -> 
+	Position #5: 
+	O (S S 0 A O 0 0 0 E) -> 
+	Position #5: 
+	U (S S 0 A U 0 0 0 E) -> 
+	Position #5: 
+	E (S S 0 A E 0 0 0 E) -> 
+	Position #5: 
+	I (S S 0 A I 0 0 0 E) -> 
+
+Backtracking...
+
+Position #1: 
+Y (Y S 0 A I 0 0 0 E) -> 
+
+Backtracking...
+
+Position #4: 
+E (Y S 0 E I 0 0 0 E) -> 
+	Position #4: 
+	I (Y S 0 I I 0 0 0 E) -> 
+	Position #4: 
+	O (Y S 0 O I 0 0 0 E) -> 
+Position #1: 
+H (H S 0 O I 0 0 0 E) -> 
+Position #5: 
+I (H S 0 O I 0 0 0 E) -> 
+Position #6: 
+W (H S 0 O I W 0 0 E) -> 
+Position #9: 
+S (H S 0 O I W 0 0 S) -> 
+Position #3: 
+I (H S I O I W 0 0 S) -> 
+Position #7: 
+N (H S I O I W N 0 S) -> 
+Position #8: 
+T (H S I O I W N T S) -> 
+	Position #8: 
+	P (H S I O I W N P S) -> 
+	Position #8: 
+	D (H S I O I W N D S) -> 
+	Position #8: 
+	Y (H S I O I W N Y S) -> H S I O I W N Y S
+Solution Found: H S I O I W N Y S
+
+	Position #8: 
+	N (H S I O I W N N S) -> 
 
 Backtracking...
 
@@ -167,53 +294,55 @@ Backtracking...
 
 Backtracking...
 
-Position #1:
-W (W S 0 O 0 0 0 N 0) ->
-	Position #1:
-	Y (Y S 0 O 0 0 0 N 0) ->
 
 Backtracking...
 
 
 Backtracking...
 
-Position #2:
-T (Y T 0 0 0 0 0 N 0) ->
 
 Backtracking...
 
-['H S I A I W N P S', 'H S I A I W N C S']
-All solutions: ['H S I A I W N P S', 'H S I A I W N C S']
+Position #1: 
+W (W S 0 O 0 0 0 0 0) -> 
+	Position #1: 
+	Y (Y S 0 O 0 0 0 0 0) -> 
+
+Backtracking...
+
+
+Backtracking...
+
+Position #2: 
+T (Y T 0 0 0 0 0 0 0) -> 
+
+Backtracking...
+
+All solutions: ['H S I A I W N P S', 'H S I A I W N C S', 'H S I O I W N Y S']
 
 
 Solving Resources/puzzle3.txt using letter-based algorithm ...
 
-Root ->
-Position #5:
-E (0 0 0 0 E 0 0) ->
-	Position #5:
-	O (0 0 0 0 O 0 0) ->
-	Position #5:
-	Y (0 0 0 0 Y 0 0) ->
-	Position #5:
-	T (0 0 0 0 T 0 0) ->
-	Position #5:
-	P (0 0 0 0 P 0 0) ->
-Position #1:
-A (A 0 0 0 P 0 0) ->
-Position #2:
-S (A S 0 0 P 0 0) ->
-Position #4:
-L (A S 0 L P 0 0) ->
-Position #6:
-E (A S 0 L P E 0) ->
-Position #7:
-A (A S 0 L P E A) ->
-Position #3:
+Root -> 
+Position #5: 
+E (0 0 0 0 E 0 0) -> 
+	Position #5: 
+	O (0 0 0 0 O 0 0) -> 
+	Position #5: 
+	P (0 0 0 0 P 0 0) -> 
+Position #1: 
+A (A 0 0 0 P 0 0) -> 
+Position #2: 
+S (A S 0 0 P 0 0) -> 
+Position #4: 
+L (A S 0 L P 0 0) -> 
+Position #6: 
+E (A S 0 L P E 0) -> 
+Position #7: 
+A (A S 0 L P E A) -> 
+Position #3: 
 U (A S U L P E A) -> A S U L P E A
-
-Number of invalid words tried: 29
-Times backtracked: 16
+Solution Found: A S U L P E A
 
 
 Backtracking...
@@ -221,8 +350,98 @@ Backtracking...
 
 Backtracking...
 
-Position #6:
-I (A S 0 L P I 0) ->
+Position #6: 
+I (A S 0 L P I 0) -> 
+Position #7: 
+P (A S 0 L P I P) -> 
+Position #3: 
+A (A S A L P I P) -> 
+	Position #3: 
+	C (A S C L P I P) -> 
+	Position #3: 
+	H (A S H L P I P) -> 
+	Position #3: 
+	Y (A S Y L P I P) -> 
+	Position #3: 
+	O (A S O L P I P) -> 
+	Position #3: 
+	U (A S U L P I P) -> 
+	Position #3: 
+	E (A S E L P I P) -> 
+	Position #3: 
+	I (A S I L P I P) -> 
+	Position #3: 
+	M (A S M L P I P) -> 
+	Position #3: 
+	F (A S F L P I P) -> 
+	Position #3: 
+	S (A S S L P I P) -> 
+	Position #3: 
+	G (A S G L P I P) -> 
+	Position #3: 
+	Z (A S Z L P I P) -> 
+
+Backtracking...
+
+Position #7: 
+L (A S Z L P I L) -> 
+Position #3: 
+A (A S A L P I L) -> 
+	Position #3: 
+	C (A S C L P I L) -> 
+	Position #3: 
+	H (A S H L P I L) -> 
+	Position #3: 
+	Y (A S Y L P I L) -> 
+	Position #3: 
+	O (A S O L P I L) -> 
+	Position #3: 
+	U (A S U L P I L) -> 
+	Position #3: 
+	E (A S E L P I L) -> 
+	Position #3: 
+	I (A S I L P I L) -> 
+	Position #3: 
+	M (A S M L P I L) -> 
+	Position #3: 
+	F (A S F L P I L) -> 
+	Position #3: 
+	S (A S S L P I L) -> 
+	Position #3: 
+	G (A S G L P I L) -> 
+	Position #3: 
+	Z (A S Z L P I L) -> 
+
+Backtracking...
+
+Position #7: 
+E (A S Z L P I E) -> 
+Position #3: 
+A (A S A L P I E) -> 
+Position #3: 
+H (A S H L P I E) -> 
+	Position #3: 
+	Y (A S Y L P I E) -> 
+	Position #3: 
+	O (A S O L P I E) -> 
+	Position #3: 
+	U (A S U L P I E) -> A S U L P I E
+Solution Found: A S U L P I E
+
+	Position #3: 
+	E (A S E L P I E) -> 
+	Position #3: 
+	I (A S I L P I E) -> 
+	Position #3: 
+	M (A S M L P I E) -> 
+	Position #3: 
+	F (A S F L P I E) -> 
+	Position #3: 
+	S (A S S L P I E) -> 
+	Position #3: 
+	G (A S G L P I E) -> 
+	Position #3: 
+	Z (A S Z L P I E) -> 
 
 Backtracking...
 
@@ -238,42 +457,114 @@ Backtracking...
 
 Backtracking...
 
-['A S U L P E A']
-All solutions: ['A S U L P E A']
+
+Backtracking...
+
+Position #5: 
+T (0 0 Z 0 T 0 0) -> 
+	Position #5: 
+	Y (0 0 Z 0 Y 0 0) -> 
+
+Backtracking...
+
+All solutions: ['A S U L P E A', 'A S U L P I E']
 
 
 Solving Resources/puzzle4.txt using letter-based algorithm ...
 
-Root ->
-Position #1:
-A (A 0 0 0 0 0 0 0) ->
-	Position #1:
-	F (F 0 0 0 0 0 0 0) ->
-	Position #1:
-	H (H 0 0 0 0 0 0 0) ->
-Position #2:
-E (H E 0 0 0 0 0 0) ->
-Position #4:
-I (H E 0 I 0 0 0 0) ->
-Position #8:
-E (H E 0 I 0 0 0 E) ->
-Position #6:
-Y (H E 0 I 0 Y 0 E) ->
-Position #7:
-R (H E 0 I 0 Y R E) ->
-Position #3:
-D (H E D I 0 Y R E) ->
-Position #5:
+Root -> 
+Position #1: 
+A (A 0 0 0 0 0 0 0) -> 
+	Position #1: 
+	F (F 0 0 0 0 0 0 0) -> 
+	Position #1: 
+	H (H 0 0 0 0 0 0 0) -> 
+Position #2: 
+E (H E 0 0 0 0 0 0) -> 
+Position #4: 
+I (H E 0 I 0 0 0 0) -> 
+Position #8: 
+E (H E 0 I 0 0 0 E) -> 
+Position #6: 
+Y (H E 0 I 0 Y 0 E) -> 
+Position #7: 
+R (H E 0 I 0 Y R E) -> 
+Position #3: 
+D (H E D I 0 Y R E) -> 
+Position #5: 
 T (H E D I T Y R E) -> H E D I T Y R E
-
-Number of invalid words tried: 10
-Times backtracked: 7
+Solution Found: H E D I T Y R E
 
 
 Backtracking...
 
-Position #3:
-T (H E T I 0 Y R E) ->
+Position #3: 
+L (H E L I 0 Y R E) -> 
+Position #5: 
+P (H E L I P Y R E) -> 
+	Position #5: 
+	T (H E L I T Y R E) -> H E L I T Y R E
+Solution Found: H E L I T Y R E
+
+	Position #5: 
+	G (H E L I G Y R E) -> 
+	Position #5: 
+	S (H E L I S Y R E) -> 
+	Position #5: 
+	D (H E L I D Y R E) -> 
+	Position #5: 
+	M (H E L I M Y R E) -> 
+	Position #5: 
+	U (H E L I U Y R E) -> 
+	Position #5: 
+	X (H E L I X Y R E) -> 
+	Position #5: 
+	F (H E L I F Y R E) -> 
+	Position #5: 
+	B (H E L I B Y R E) -> 
+	Position #5: 
+	Y (H E L I Y Y R E) -> 
+	Position #5: 
+	R (H E L I R Y R E) -> 
+	Position #5: 
+	L (H E L I L Y R E) -> 
+	Position #5: 
+	W (H E L I W Y R E) -> 
+
+Backtracking...
+
+Position #3: 
+T (H E T I W Y R E) -> 
+Position #5: 
+P (H E T I P Y R E) -> 
+	Position #5: 
+	T (H E T I T Y R E) -> H E T I T Y R E
+Solution Found: H E T I T Y R E
+
+	Position #5: 
+	G (H E T I G Y R E) -> 
+	Position #5: 
+	S (H E T I S Y R E) -> 
+	Position #5: 
+	D (H E T I D Y R E) -> 
+	Position #5: 
+	M (H E T I M Y R E) -> 
+	Position #5: 
+	U (H E T I U Y R E) -> 
+	Position #5: 
+	X (H E T I X Y R E) -> 
+	Position #5: 
+	F (H E T I F Y R E) -> 
+	Position #5: 
+	B (H E T I B Y R E) -> 
+	Position #5: 
+	Y (H E T I Y Y R E) -> 
+	Position #5: 
+	R (H E T I R Y R E) -> 
+	Position #5: 
+	L (H E T I L Y R E) -> 
+	Position #5: 
+	W (H E T I W Y R E) -> 
 
 Backtracking...
 
@@ -292,40 +583,127 @@ Backtracking...
 
 Backtracking...
 
-Position #1:
-W (W 0 T 0 0 0 0 0) ->
 
 Backtracking...
 
-['H E D I T Y R E']
-All solutions: ['H E D I T Y R E']
+Position #1: 
+W (W 0 0 0 W 0 0 0) -> 
+Position #2: 
+H (W H 0 0 W 0 0 0) -> 
+
+Backtracking...
+
+
+Backtracking...
+
+All solutions: ['H E D I T Y R E', 'H E L I T Y R E', 'H E T I T Y R E']
 
 
 Solving Resources/puzzle5.txt using letter-based algorithm ...
 
-Root ->
-Position #9:
-N (0 0 0 0 0 0 0 0 N) ->
-Position #8:
-E (0 0 0 0 0 0 0 E N) ->
-Position #6:
-O (0 0 0 0 0 O 0 E N) ->
-Position #3:
-T (0 0 T 0 0 O 0 E N) ->
-Position #4:
-T (0 0 T T 0 O 0 E N) ->
-Position #7:
-I (0 0 T T 0 O I E N) ->
-Position #1:
-I (I 0 T T 0 O I E N) ->
-Position #2:
-H (I H T T 0 O I E N) ->
-Position #5:
+Root -> 
+Position #9: 
+N (0 0 0 0 0 0 0 0 N) -> 
+Position #8: 
+E (0 0 0 0 0 0 0 E N) -> 
+Position #6: 
+O (0 0 0 0 0 O 0 E N) -> 
+Position #3: 
+T (0 0 T 0 0 O 0 E N) -> 
+Position #4: 
+T (0 0 T T 0 O 0 E N) -> 
+Position #7: 
+I (0 0 T T 0 O I E N) -> 
+Position #1: 
+I (I 0 T T 0 O I E N) -> 
+Position #2: 
+H (I H T T 0 O I E N) -> 
+Position #5: 
 N (I H T T N O I E N) -> I H T T N O I E N
+Solution Found: I H T T N O I E N
 
-Number of invalid words tried: 10
-Times backtracked: 8
+Position #5: 
+Y (I H T T Y O I E N) -> I H T T Y O I E N
+Solution Found: I H T T Y O I E N
 
+
+Backtracking...
+
+
+Backtracking...
+
+Position #1: 
+T (T 0 T T 0 O I E N) -> 
+Position #2: 
+A (T A T T 0 O I E N) -> 
+	Position #2: 
+	B (T B T T 0 O I E N) -> 
+Position #5: 
+A (T B T T A O I E N) -> 
+	Position #5: 
+	N (T B T T N O I E N) -> 
+	Position #5: 
+	O (T B T T O O I E N) -> 
+	Position #5: 
+	P (T B T T P O I E N) -> 
+	Position #5: 
+	Q (T B T T Q O I E N) -> 
+	Position #5: 
+	S (T B T T S O I E N) -> 
+	Position #5: 
+	Y (T B T T Y O I E N) -> 
+
+Backtracking...
+
+Position #2: 
+C (T C T T Y O I E N) -> 
+	Position #2: 
+	D (T D T T Y O I E N) -> 
+	Position #2: 
+	E (T E T T Y O I E N) -> 
+Position #5: 
+A (T E T T A O I E N) -> 
+	Position #5: 
+	N (T E T T N O I E N) -> 
+	Position #5: 
+	O (T E T T O O I E N) -> 
+	Position #5: 
+	P (T E T T P O I E N) -> 
+	Position #5: 
+	Q (T E T T Q O I E N) -> 
+	Position #5: 
+	S (T E T T S O I E N) -> 
+	Position #5: 
+	Y (T E T T Y O I E N) -> 
+
+Backtracking...
+
+Position #2: 
+F (T F T T Y O I E N) -> 
+	Position #2: 
+	G (T G T T Y O I E N) -> 
+	Position #2: 
+	H (T H T T Y O I E N) -> T H T T Y O I E N
+Solution Found: T H T T Y O I E N
+
+	Position #2: 
+	J (T J T T Y O I E N) -> 
+	Position #2: 
+	M (T M T T Y O I E N) -> 
+	Position #2: 
+	O (T O T T Y O I E N) -> 
+	Position #2: 
+	P (T P T T Y O I E N) -> 
+	Position #2: 
+	R (T R T T Y O I E N) -> 
+	Position #2: 
+	S (T S T T Y O I E N) -> 
+	Position #2: 
+	T (T T T T Y O I E N) -> 
+	Position #2: 
+	Y (T Y T T Y O I E N) -> 
+	Position #2: 
+	Z (T Z T T Y O I E N) -> 
 
 Backtracking...
 
@@ -350,12 +728,4 @@ Backtracking...
 
 Backtracking...
 
-
-Backtracking...
-
-['I H T T N O I E N']
-All solutions: ['I H T T N O I E N']
-
-
-
-Process finished with exit code 0
+All solutions: ['I H T T N O I E N', 'I H T T Y O I E N', 'T H T T Y O I E N']
