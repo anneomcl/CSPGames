@@ -61,6 +61,7 @@ def fowardNodeValue(child, gameInstance, nodeType):
 
 global counter
 counter=0
+
 def minimax(gameInstance, node, depth, isMax, visitedStates, totalUtil, maxMin, moveList, expansionType, root):
     #print(maxMin)
 
@@ -89,7 +90,7 @@ def minimax(gameInstance, node, depth, isMax, visitedStates, totalUtil, maxMin, 
         # print('...')
         # print(maxMin)
         # print('...')
-        counter=counter +1
+
         #print(evaluate(maxMin, node, expansionType))
         return evaluate(maxMin, node, expansionType)
     if isMax==True:
@@ -100,6 +101,7 @@ def minimax(gameInstance, node, depth, isMax, visitedStates, totalUtil, maxMin, 
         for child in children['para']:
             tempPar=maxMin+fowardNodeValue(child, gameInstance, 'para')
             #print(tempPar)
+            counter=counter +1
             res= minimax(gameInstance, child,
                                                                 depth-1,
                                                                 False,
@@ -125,6 +127,7 @@ def minimax(gameInstance, node, depth, isMax, visitedStates, totalUtil, maxMin, 
             for child in piece2:
                 tempPar=maxMin+fowardNodeValue(child, gameInstance, 'blitz')
                 #print(tempPar)
+                counter=counter +1
                 res= minimax(gameInstance, child[0],
                             depth-1,
                             False,
@@ -155,6 +158,7 @@ def minimax(gameInstance, node, depth, isMax, visitedStates, totalUtil, maxMin, 
         for child in children['para']:
             tempPar=maxMin-fowardNodeValue(child, gameInstance, 'para')
             #print(tempPar)
+            counter=counter +1
             res= minimax(gameInstance, child,
                         depth-1,
                         True,
@@ -182,6 +186,7 @@ def minimax(gameInstance, node, depth, isMax, visitedStates, totalUtil, maxMin, 
             for child in piece2:
                 tempPar=maxMin-fowardNodeValue(child, gameInstance, 'blitz')
                 #print(tempPar)
+                counter=counter +1
                 res= minimax(gameInstance, child[0],
                             depth-1,
                             True,
@@ -203,6 +208,215 @@ def minimax(gameInstance, node, depth, isMax, visitedStates, totalUtil, maxMin, 
                         v=(vp[0], v[1], v[2])
 
 
+
+        #print(v)
+        return v
+
+
+
+
+
+
+def alphaBetaSearch(minVal, maxVal, gameInstance, node, depth, isMax, visitedStates, totalUtil, maxMin, moveList, expansionType, root):
+    #print(maxMin)
+
+    global counter
+
+    visit=deepcopy(visitedStates)
+   # print(visit)
+    if isMax==False and visit[node[0]][node[1]]==0:
+        visit[node[0]][node[1]]='a'
+        if expansionType == 'blitz':
+            for elem in flippedNodesFromBlitz(visit,node,'a'):
+                visit[elem[0]][elem[1]]='a'
+    elif isMax==True and visit[node[0]][node[1]]==0:
+        visit[node[0]][node[1]]='b'
+        if expansionType == 'blitz':
+            for elem in flippedNodesFromBlitz(visit,node,'b'):
+                visit[elem[0]][elem[1]]='b'
+
+    #print(isMax)
+    #print(visit)
+    children=getChildren(visit, gameInstance,isMax)
+
+    #print('blitz children',children['blitz'])
+    #print(' children',children)
+    if len(children['para'])==0 and len(children['blitz'])==0 or depth==0:
+        # print('...')
+        # print(maxMin)
+        # print('...')
+
+        #print(evaluate(maxMin, node, expansionType))
+        return evaluate(maxMin, node, expansionType)
+    if isMax==True:
+        v=(minVal, node, expansionType)
+        vp=0
+        retNode=node
+        #print('max turn')
+        for child in children['para']:
+            tempPar=maxMin+fowardNodeValue(child, gameInstance, 'para')
+            #print(tempPar)
+            counter=counter +1
+
+
+
+            res= alphaBetaSearch(v[0], maxVal, gameInstance, child,
+                                                                depth-1,
+                                                                False,
+                                                                visit,
+                                                                totalUtil,
+                                                                tempPar, moveList, 'para',root)
+            vp=res
+
+            #print(vp)
+            if vp[0] > v[0]:
+                if v[1] == root:
+
+                    v=(vp[0], v[1], v[2])
+                    moveList[0]=vp[1]
+                    moveList[1]=vp[2]
+                    #print('move',moveList)
+                else:
+                    #print('kkk', v[1])
+                    v=(vp[0], v[1], v[2])
+
+                if v[0] > maxVal:
+                    if v[1] == root:
+
+                        v=(vp[0], v[1], v[2])
+                        moveList[0]=vp[1]
+                        moveList[1]=vp[2]
+                        #print('move',moveList)
+                    else:
+                        #print('kkk2', v[1])
+                        v=(maxVal, v[1], v[2])
+                        return v
+
+
+        for piece in children['blitz']:
+            #print(children['blitz'])
+            piece2=piece[1]
+            for child in piece2:
+                tempPar=maxMin+fowardNodeValue(child, gameInstance, 'blitz')
+                #print(tempPar)
+                counter=counter +1
+
+                res= alphaBetaSearch(v[0], maxVal,gameInstance, child[0],
+                            depth-1,
+                            False,
+                                                                    visit,
+                                                                    totalUtil,
+                                                                   tempPar, moveList, 'blitz',root)
+                #print(vp)
+                vp=res
+
+                if vp[0] > v[0]:
+                    if v[1] == root:
+
+                        v=(vp[0], v[1], v[2])
+                        moveList[0]=vp[1]
+                        moveList[1]=vp[2]
+                        #print('move',moveList)
+                    else:
+                        #print('kkk2', v[1])
+                        v=(vp[0], v[1], v[2])
+
+                if v[0] > maxVal:
+                    if v[1] == root:
+
+                        v=(vp[0], v[1], v[2])
+                        moveList[0]=vp[1]
+                        moveList[1]=vp[2]
+                        #print('move',moveList)
+                    else:
+                        #print('kkk2', v[1])
+                        v=(maxVal, v[1], v[2])
+                        return v
+
+
+        return v
+    if isMax==False:
+        v=(maxVal, node, expansionType)
+        vp=0
+        retNode=node
+        #print('min turn')
+        for child in children['para']:
+            tempPar=maxMin-fowardNodeValue(child, gameInstance, 'para')
+            #print(tempPar)
+            counter=counter +1
+
+            res= alphaBetaSearch(minVal, v[0], gameInstance, child,
+                        depth-1,
+                        True,
+                                                                visit,
+                                                                totalUtil,
+                                                               tempPar, moveList, 'para',root)
+            #print(vp)
+            vp=res
+            #print(vp)
+
+            if vp[0] < v[0]:
+                if v[1] == root:
+
+                    v=(vp[0], v[1], v[2])
+                    moveList[0]=vp[1]
+                    moveList[1]=vp[2]
+                    #print('move',moveList)
+                else:
+                    #print('kkk2', v[1])
+                    v=(vp[0], v[1], v[2])
+
+                if v[0] < minVal:
+                    if v[1] == root:
+
+                        v=(vp[0], v[1], v[2])
+                        moveList[0]=vp[1]
+                        moveList[1]=vp[2]
+                        #print('move',moveList)
+                    else:
+                        #print('kkk2', v[1])
+                        v=(minVal, v[1], v[2])
+                        return v
+
+        for piece in children['blitz']:
+            #print(children['blitz'])
+            piece2=piece[1]
+            for child in piece2:
+                tempPar=maxMin-fowardNodeValue(child, gameInstance, 'blitz')
+                #print(tempPar)
+                counter=counter +1
+
+                res= alphaBetaSearch(minVal, v[0], gameInstance, child[0],
+                            depth-1,
+                            True,
+                                                                    visit,
+                                                                    totalUtil,
+                                                                   tempPar, moveList, 'blitz',root)
+                #print(vp)
+                vp=res
+
+                if vp[0] < v[0]:
+                    if v[1] == root:
+
+                        v=(vp[0], v[1], v[2])
+                        moveList[0]=vp[1]
+                        moveList[1]=vp[2]
+                        #print('move',moveList)
+                    else:
+                        #print('kkk2', v[1])
+                        v=(vp[0], v[1], v[2])
+
+                if v[0] < minVal:
+                    if v[1] == root:
+
+                        v=(vp[0], v[1], v[2])
+                        moveList[0]=vp[1]
+                        moveList[1]=vp[2]
+                        #print('move',moveList)
+                    else:
+                        #print('kkk2', v[1])
+                        v=(minVal, v[1], v[2])
+                        return v
 
         #print(v)
         return v
@@ -314,24 +528,44 @@ def zeroInList(gameInstance):
     return False
 
 
-def firstMove(gameInstance, depth):
-    playerMove=[(-1,-1), 'ERROR']
-    visitReplace=deepcopy(gameInstance.tempBoard2State)
-    total=-1000
-    first=[(-1,-1)]
-    for r in range(0,len(gameInstance.tempBoard2State)):
-        for c in range(0, len(gameInstance.tempBoard2State[r])):
-            gameInstance.tempBoard2State[r][c]='a'
-            result=minimax(gameInstance, (r,c), depth, True, list(gameInstance.tempBoard2State),0,gameInstance.tempBoard2[r][c], playerMove, 'para',(r,c))
-            if total < result[0]:
-                total=result[0]
-                first[0]=playerMove[0]
-            gameInstance.tempBoard2State=deepcopy(visitReplace)
+def firstMove(gameInstance, depth, alpha):
+
+    if alpha==False:
+        playerMove=[(-1,-1), 'ERROR']
+        visitReplace=deepcopy(gameInstance.tempBoard2State)
+        total=-1000
+        first=[(-1,-1)]
+        for r in range(0,len(gameInstance.tempBoard2State)):
+            for c in range(0, len(gameInstance.tempBoard2State[r])):
+                gameInstance.tempBoard2State[r][c]='a'
+                result=minimax(gameInstance, (r,c), depth, True, list(gameInstance.tempBoard2State),0,gameInstance.tempBoard2[r][c], playerMove, 'para',(r,c))
+                if total < result[0]:
+                    total=result[0]
+                    first[0]=playerMove[0]
+                gameInstance.tempBoard2State=deepcopy(visitReplace)
 
 
-    gameInstance.tempBoard2State=deepcopy(visitReplace)
-    print('lllllllllllllllllllllllllllllll',first[0])
-    return first[0]
+        gameInstance.tempBoard2State=deepcopy(visitReplace)
+        print('lllllllllllllllllllllllllllllll',first[0])
+        return first[0]
+    else:
+        playerMove=[(-1,-1), 'ERROR']
+        visitReplace=deepcopy(gameInstance.tempBoard2State)
+        total=-1000
+        first=[(-1,-1)]
+        for r in range(0,len(gameInstance.tempBoard2State)):
+            for c in range(0, len(gameInstance.tempBoard2State[r])):
+                gameInstance.tempBoard2State[r][c]='a'
+                result=alphaBetaSearch(-1000,1000,gameInstance, (r,c), depth, True, list(gameInstance.tempBoard2State),0,gameInstance.tempBoard2[r][c], playerMove, 'para',(r,c))
+                if total < result[0]:
+                    total=result[0]
+                    first[0]=playerMove[0]
+                gameInstance.tempBoard2State=deepcopy(visitReplace)
+
+
+        gameInstance.tempBoard2State=deepcopy(visitReplace)
+        print('lllllllllllllllllllllllllllllll',first[0])
+        return first[0]
 
     # x=0
     # node=(-1,-1)
@@ -349,7 +583,7 @@ def firstMove(gameInstance, depth):
 def ageOfBlitz():
     depth=3
     gameInstance=GameBoard()
-    b = Board('Resources\Sevastopol.txt')
+    b = Board('Resources\Smolensk.txt')
 
     # tempBoard2=[[1,4],
     #             [3,2]]
@@ -375,7 +609,7 @@ def ageOfBlitz():
     playerTurn=False
 
     #determine first move
-    node=firstMove(gameInstance, depth)
+    node=firstMove(gameInstance, depth, False)
     #node=(1,0)
     #update gameState
     gameInstance.tempBoard2State[node[0]][node[1]]='a'
@@ -386,7 +620,7 @@ def ageOfBlitz():
             result=minimax(gameInstance, node, depth, True, list(gameInstance.tempBoard2State),0,gameInstance.tempBoard2[node[0]][node[1]], playerMove, 'para',node)
             node=playerMove[0]
             print('RESULT A')
-            print(result)
+            print(playerMove)
             gameInstance.tempBoard2State[node[0]][node[1]]='a'
             if playerMove[1] == 'blitz':
                 for elem in flippedNodesFromBlitz(gameInstance.tempBoard2State,node,'a'):
@@ -399,7 +633,7 @@ def ageOfBlitz():
             result=minimax(gameInstance, node, depth, False, list(gameInstance.tempBoard2State),0,gameInstance.tempBoard2[node[0]][node[1]], playerMove, 'para',node)
             node=playerMove[0]
             print('RESULT B')
-            print(result)
+            print(playerMove)
             gameInstance.tempBoard2State[node[0]][node[1]]='b'
             if playerMove[1] == 'blitz':
                 for elem in flippedNodesFromBlitz(gameInstance.tempBoard2State,node,'b'):
@@ -412,6 +646,80 @@ def ageOfBlitz():
     print('------------')
     printBoard(gameInstance.tempBoard2State)
     return 1
+
+
+
+
+def ageOfBlitzAlphaAlpha():
+    depth=3
+    gameInstance=GameBoard()
+    b = Board('Resources\Smolensk.txt')
+
+    #
+    # tempBoard2=[[1,4],
+    #             [3,2]]
+    # b.board=deepcopy(tempBoard2)
+
+    gameInstance.tempBoard2=b.board
+    gameInstance.boardSize=len(gameInstance.tempBoard2)
+    initializeState=[]
+    for elem in range(0,gameInstance.boardSize):
+        initializeState.append([])
+        for elem2 in range(0, gameInstance.boardSize):
+            initializeState[elem].append(0)
+    gameInstance.tempBoard2State=deepcopy(initializeState)
+    printBoard(initializeState)
+    print('------------')
+    printBoard(gameInstance.tempBoard2)
+    print('------------')
+
+
+
+
+    playerMove=[(-1,-1), 'ERROR']
+    playerTurn=False
+
+    #determine first move
+    node=firstMove(gameInstance, depth, True)
+    #node=(1,0)
+    #update gameState
+    gameInstance.tempBoard2State[node[0]][node[1]]='a'
+    #while(moves are possible)
+    while(zeroInList(gameInstance)):
+        if playerTurn == True:
+            print('jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj')
+            result=alphaBetaSearch(-1000,1000,gameInstance, node, depth, True, list(gameInstance.tempBoard2State),0,gameInstance.tempBoard2[node[0]][node[1]], playerMove, 'para',node)
+            node=playerMove[0]
+            print('RESULT A')
+            print(playerMove)
+            gameInstance.tempBoard2State[node[0]][node[1]]='a'
+            if playerMove[1] == 'blitz':
+                for elem in flippedNodesFromBlitz(gameInstance.tempBoard2State,node,'a'):
+                    gameInstance.tempBoard2State[elem[0]][elem[1]]='a'
+            playerTurn=False
+            printBoard(gameInstance.tempBoard2State)
+            #print(result)
+        if playerTurn == False:
+            print('jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj')
+            result=alphaBetaSearch(-1000,1000,gameInstance, node, depth, False, list(gameInstance.tempBoard2State),0,gameInstance.tempBoard2[node[0]][node[1]], playerMove, 'para',node)
+            node=playerMove[0]
+            print('RESULT B')
+            print(playerMove)
+            gameInstance.tempBoard2State[node[0]][node[1]]='b'
+            if playerMove[1] == 'blitz':
+                for elem in flippedNodesFromBlitz(gameInstance.tempBoard2State,node,'b'):
+                    gameInstance.tempBoard2State[elem[0]][elem[1]]='b'
+            printBoard(gameInstance.tempBoard2State)
+            playerTurn=True
+            #print(result)
+        #update gameState
+    #printboard
+    print('------------')
+    printBoard(gameInstance.tempBoard2State)
+    return 1
+
+
+
 
 def printBoard(board):
     for elem in board:
@@ -565,6 +873,17 @@ def tester():
 # tester()
 
 start = timeit.default_timer()
+ageOfBlitzAlphaAlpha()
+stop = timeit.default_timer()
+print(start-stop)
+print(counter)
+counter=0
+
+
+start = timeit.default_timer()
 ageOfBlitz()
 stop = timeit.default_timer()
 print(start-stop)
+print(counter)
+counter=0
+
