@@ -1,0 +1,166 @@
+C:\WinPython-64bit-3.4.3.3\python-3.4.3.amd64\python.exe C:/Users/R/PycharmProjects/CSPGames/AIMP2_Main.py
+------- the average runtimes for 3
+Average Time no forward checking : 1.3073445455845982e-05
+Average Time with forward checking : 1.3769881335268583e-05
+Average Number Edges : 2.9571428571428573
+Average Number of Assignments no forward checking : 2.9571428571428573
+Average Number of Assignments with forward checking : 2.9571428571428573
+------- the average runtimes for 4
+Average Time no forward checking : 1.7423115158912705e-05
+Average Time with forward checking : 1.9854531650231878e-05
+Average Number Edges : 5.314285714285714
+Average Number of Assignments no forward checking : 3.942857142857143
+Average Number of Assignments with forward checking : 3.942857142857143
+------- the average runtimes for 5
+Average Time no forward checking : 2.1925512028520794e-05
+Average Time with forward checking : 2.582310931862976e-05
+Average Number Edges : 7.585714285714285
+Average Number of Assignments no forward checking : 4.928571428571429
+Average Number of Assignments with forward checking : 4.928571428571429
+------- the average runtimes for 6
+Average Time no forward checking : 3.1950523240223804e-05
+Average Time with forward checking : 3.246368651978709e-05
+Average Number Edges : 10.042857142857143
+Average Number of Assignments no forward checking : 6.4714285714285715
+Average Number of Assignments with forward checking : 5.914285714285715
+------- the average runtimes for 7
+Average Time no forward checking : 3.955022704725967e-05
+Average Time with forward checking : 3.850557322812983e-05
+Average Number Edges : 12.814285714285715
+Average Number of Assignments no forward checking : 7.6
+Average Number of Assignments with forward checking : 6.9
+------- the average runtimes for 8
+Average Time no forward checking : 4.385102405704e-05
+Average Time with forward checking : 4.7711966827170194e-05
+Average Number Edges : 15.357142857142858
+Average Number of Assignments no forward checking : 8.3
+Average Number of Assignments with forward checking : 8.042857142857143
+------- the average runtimes for 9
+Average Time no forward checking : 9.52223337944932e-05
+Average Time with forward checking : 5.567821583388279e-05
+Average Number Edges : 18.042857142857144
+Average Number of Assignments no forward checking : 15.014285714285714
+Average Number of Assignments with forward checking : 8.928571428571429
+------- the average runtimes for 10
+Average Time no forward checking : 9.786756831899572e-05
+Average Time with forward checking : 6.509231837944337e-05
+Average Number Edges : 20.785714285714285
+Average Number of Assignments no forward checking : 15.714285714285714
+Average Number of Assignments with forward checking : 10.057142857142857
+------- the average runtimes for 11
+Average Time no forward checking : 9.343848048929563e-05
+Average Time with forward checking : 7.572212917066018e-05
+Average Number Edges : 23.228571428571428
+Average Number of Assignments no forward checking : 14.942857142857143
+Average Number of Assignments with forward checking : 11.214285714285714
+------- the average runtimes for 12
+Average Time no forward checking : 0.0002560990219413536
+Average Time with forward checking : 9.243659027678827e-05
+Average Number Edges : 26.02857142857143
+Average Number of Assignments no forward checking : 34.82857142857143
+Average Number of Assignments with forward checking : 12.457142857142857
+------- the average runtimes for 13
+Average Time no forward checking : 0.0006997714407407025
+Average Time with forward checking : 0.00010533898130613245
+Average Number Edges : 29.0
+Average Number of Assignments no forward checking : 87.2
+Average Number of Assignments with forward checking : 14.4
+------- the average runtimes for 14
+Average Time no forward checking : 0.00042543679511452783
+Average Time with forward checking : 0.0001207216615201036
+Average Number Edges : 31.585714285714285
+Average Number of Assignments no forward checking : 53.4
+Average Number of Assignments with forward checking : 15.585714285714285
+------- the average runtimes for 15
+Average Time no forward checking : 0.0006185755699213123
+Average Time with forward checking : 0.0001378393223457738
+Average Number Edges : 34.52857142857143
+Average Number of Assignments no forward checking : 74.91428571428571
+Average Number of Assignments with forward checking : 17.542857142857144
+------- the average runtimes for 16
+Average Time no forward checking : 0.0029374993394551295
+Average Time with forward checking : 0.00019161150314143274
+Average Number Edges : 37.114285714285714
+Average Number of Assignments no forward checking : 327.42857142857144
+Average Number of Assignments with forward checking : 22.314285714285713
+------- the average runtimes for 17
+Average Time no forward checking : 0.001713537717714862
+Average Time with forward checking : 0.00025514600442205293
+Average Number Edges : 40.142857142857146
+Average Number of Assignments no forward checking : 187.88571428571427
+Average Number of Assignments with forward checking : 27.32857142857143
+------- the average runtimes for 18
+Average Time no forward checking : 0.004340328909560322
+Average Time with forward checking : 0.00031730596120408246
+Average Number Edges : 42.91428571428571
+Average Number of Assignments no forward checking : 469.74285714285713
+Average Number of Assignments with forward checking : 33.32857142857143
+------- the average runtimes for 19
+Average Time no forward checking : 0.002583392240201527
+Average Time with forward checking : 0.0005067792840139568
+Average Number Edges : 45.785714285714285
+Average Number of Assignments no forward checking : 268.24285714285713
+Average Number of Assignments with forward checking : 48.57142857142857
+------- the average runtimes for 20
+Average Time no forward checking : 0.004768478139152878
+Average Time with forward checking : 0.0005971448939124713
+Average Number Edges : 48.785714285714285
+Average Number of Assignments no forward checking : 481.64285714285717
+Average Number of Assignments with forward checking : 55.01428571428571
+------- the average runtimes for 21
+Average Time no forward checking : 0.010441510413029879
+Average Time with forward checking : 0.000794120175142662
+Average Number Edges : 51.7
+Average Number of Assignments no forward checking : 1048.942857142857
+Average Number of Assignments with forward checking : 71.35714285714286
+------- the average runtimes for 22
+Average Time no forward checking : 0.06039815117044956
+Average Time with forward checking : 0.001243724517090986
+Average Number Edges : 54.31428571428572
+Average Number of Assignments no forward checking : 5838.171428571429
+Average Number of Assignments with forward checking : 106.07142857142857
+------- the average runtimes for 23
+Average Time no forward checking : 0.05933252485680488
+Average Time with forward checking : 0.0011880401921699907
+Average Number Edges : 57.31428571428572
+Average Number of Assignments no forward checking : 5669.442857142857
+Average Number of Assignments with forward checking : 98.07142857142857
+------- the average runtimes for 24
+Average Time no forward checking : 0.09643041790001468
+Average Time with forward checking : 0.0021691289645912903
+Average Number Edges : 60.0
+Average Number of Assignments no forward checking : 9029.842857142858
+Average Number of Assignments with forward checking : 172.68571428571428
+------- the average runtimes for 25
+Average Time no forward checking : 0.05418296189170166
+Average Time with forward checking : 0.0052401485021212986
+Average Number Edges : 62.857142857142854
+Average Number of Assignments no forward checking : 4891.2
+Average Number of Assignments with forward checking : 399.5285714285714
+------- the average runtimes for 26
+Average Time no forward checking : 0.12109631958685034
+Average Time with forward checking : 0.0038279781385106
+Average Number Edges : 65.48571428571428
+Average Number of Assignments no forward checking : 10711.271428571428
+Average Number of Assignments with forward checking : 286.0571428571429
+------- the average runtimes for 27
+Average Time no forward checking : 0.28308068289081256
+Average Time with forward checking : 0.00634486075222733
+Average Number Edges : 68.54285714285714
+Average Number of Assignments no forward checking : 24019.914285714287
+Average Number of Assignments with forward checking : 457.2
+------- the average runtimes for 28
+Average Time no forward checking : 0.795031571454414
+Average Time with forward checking : 0.0021984525805655557
+Average Number Edges : 71.12857142857143
+Average Number of Assignments no forward checking : 69216.94285714286
+Average Number of Assignments with forward checking : 160.12857142857143
+------- the average runtimes for 29
+Average Time no forward checking : 2.4430120815130554
+Average Time with forward checking : 0.021955275498729877
+Average Number Edges : 74.34285714285714
+Average Number of Assignments no forward checking : 207934.92857142858
+Average Number of Assignments with forward checking : 1511.142857142857
+DONE
+
+Process finished with exit code 0

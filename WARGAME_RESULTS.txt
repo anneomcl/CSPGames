@@ -1,0 +1,348 @@
+C:\WinPython-64bit-3.4.3.3\python-3.4.3.amd64\python.exe C:/Users/R/PycharmProjects/CSPGames/warGame.py
+------------------------ Resources/Sevastopol.txt ---------------------------
+-----------Player A: MiniMax, PlayerB: MiniMax-----------
+------------
+['a', 'b', 'a', 'b', 'b', 'b']
+['a', 'a', 'b', 'a', 'b', 'b']
+['a', 'a', 'a', 'b', 'a', 'b']
+['a', 'a', 'b', 'a', 'b', 'a']
+['a', 'a', 'a', 'b', 'b', 'b']
+['b', 'a', 'a', 'a', 'b', 'b']
+(Player A Score, Player B Score):  (200, 178)
+Total Nodes Expanded for Player A:  283661
+Total Nodes Expanded for Player B:  298345
+Average Total Nodes Expanded:  16628.742857142857
+Average Nodes Expanded for Player A:  16685.941176470587
+Average Nodes Expanded for Player B:  16574.722222222223
+Average Turn Time:  3.4338432893424122
+Average Turn Time for Player A:  3.3513562062784605
+Average Turn Time for Player B:  3.5117477566805886
+-----------Player A: AlphaBeta, PlayerB: AlphaBeta-----------
+------------
+['a', 'b', 'a', 'b', 'b', 'b']
+['a', 'a', 'b', 'a', 'b', 'b']
+['a', 'a', 'a', 'b', 'a', 'b']
+['a', 'a', 'b', 'a', 'b', 'a']
+['a', 'a', 'a', 'b', 'b', 'b']
+['b', 'a', 'a', 'a', 'b', 'b']
+(Player A Score, Player B Score):  (200, 178)
+Total Nodes Expanded for Player A:  186727
+Total Nodes Expanded for Player B:  213285
+Average Total Nodes Expanded:  11428.914285714285
+Average Nodes Expanded for Player A:  10983.941176470587
+Average Nodes Expanded for Player B:  11849.166666666666
+Average Turn Time:  2.313024859889622
+Average Turn Time for Player A:  2.163165824009799
+Average Turn Time for Player B:  2.454558393776122
+-----------Player A: MiniMax, PlayerB: AlphaBeta-----------
+------------
+['a', 'b', 'a', 'b', 'b', 'b']
+['a', 'a', 'b', 'a', 'b', 'b']
+['a', 'a', 'a', 'b', 'a', 'b']
+['a', 'a', 'b', 'a', 'b', 'a']
+['a', 'a', 'a', 'b', 'b', 'b']
+['b', 'a', 'a', 'a', 'b', 'b']
+(Player A Score, Player B Score):  (200, 178)
+Total Nodes Expanded for Player A:  283661
+Total Nodes Expanded for Player B:  213285
+Average Total Nodes Expanded:  14198.457142857143
+Average Nodes Expanded for Player A:  16685.941176470587
+Average Nodes Expanded for Player B:  11849.166666666666
+Average Turn Time:  2.8298557418602983
+Average Turn Time for Player A:  3.2447464343264603
+Average Turn Time for Player B:  2.4380145323089235
+-----------Player A: AlphaBeta, PlayerB: MiniMax-----------
+------------
+['a', 'b', 'a', 'b', 'b', 'b']
+['a', 'a', 'b', 'a', 'b', 'b']
+['a', 'a', 'a', 'b', 'a', 'b']
+['a', 'a', 'b', 'a', 'b', 'a']
+['a', 'a', 'a', 'b', 'b', 'b']
+['b', 'a', 'a', 'a', 'b', 'b']
+(Player A Score, Player B Score):  (200, 178)
+Total Nodes Expanded for Player A:  186727
+Total Nodes Expanded for Player B:  298345
+Average Total Nodes Expanded:  13859.2
+Average Nodes Expanded for Player A:  10983.941176470587
+Average Nodes Expanded for Player B:  16574.722222222223
+Average Turn Time:  2.838706488870256
+Average Turn Time for Player A:  2.174340809694694
+Average Turn Time for Player B:  3.4661629636471756
+------------------------ Resources/Keren.txt ---------------------------
+-----------Player A: MiniMax, PlayerB: MiniMax-----------
+------------
+['b', 'a', 'b', 'b', 'b', 'b']
+['a', 'b', 'b', 'b', 'a', 'b']
+['b', 'a', 'b', 'a', 'a', 'a']
+['a', 'b', 'a', 'b', 'a', 'b']
+['b', 'a', 'b', 'b', 'b', 'b']
+['a', 'b', 'b', 'b', 'b', 'b']
+(Player A Score, Player B Score):  (12, 24)
+Total Nodes Expanded for Player A:  312681
+Total Nodes Expanded for Player B:  328457
+Average Total Nodes Expanded:  18318.22857142857
+Average Nodes Expanded for Player A:  18393.0
+Average Nodes Expanded for Player B:  18247.61111111111
+Average Turn Time:  2.8128134060729866
+Average Turn Time for Player A:  2.803421989081745
+Average Turn Time for Player B:  2.8216830776758255
+-----------Player A: AlphaBeta, PlayerB: AlphaBeta-----------
+------------
+['b', 'a', 'b', 'b', 'b', 'b']
+['a', 'b', 'b', 'b', 'a', 'b']
+['b', 'a', 'b', 'a', 'a', 'a']
+['a', 'b', 'a', 'b', 'a', 'b']
+['b', 'a', 'b', 'b', 'b', 'b']
+['a', 'b', 'b', 'b', 'b', 'b']
+(Player A Score, Player B Score):  (12, 24)
+Total Nodes Expanded for Player A:  306244
+Total Nodes Expanded for Player B:  320760
+Average Total Nodes Expanded:  17914.4
+Average Nodes Expanded for Player A:  18014.352941176472
+Average Nodes Expanded for Player B:  17820.0
+Average Turn Time:  2.6947634192044787
+Average Turn Time for Player A:  2.6665944213264887
+Average Turn Time for Player B:  2.7213674727559134
+-----------Player A: MiniMax, PlayerB: AlphaBeta-----------
+------------
+['b', 'a', 'b', 'b', 'b', 'b']
+['a', 'b', 'b', 'b', 'a', 'b']
+['b', 'a', 'b', 'a', 'a', 'a']
+['a', 'b', 'a', 'b', 'a', 'b']
+['b', 'a', 'b', 'b', 'b', 'b']
+['a', 'b', 'b', 'b', 'b', 'b']
+(Player A Score, Player B Score):  (12, 24)
+Total Nodes Expanded for Player A:  312681
+Total Nodes Expanded for Player B:  320760
+Average Total Nodes Expanded:  18098.314285714285
+Average Nodes Expanded for Player A:  18393.0
+Average Nodes Expanded for Player B:  17820.0
+Average Turn Time:  2.7687188371671123
+Average Turn Time for Player A:  2.7902914488206667
+Average Turn Time for Player B:  2.7483447039387556
+-----------Player A: AlphaBeta, PlayerB: MiniMax-----------
+------------
+['b', 'a', 'b', 'b', 'b', 'b']
+['a', 'b', 'b', 'b', 'a', 'b']
+['b', 'a', 'b', 'a', 'a', 'a']
+['a', 'b', 'a', 'b', 'a', 'b']
+['b', 'a', 'b', 'b', 'b', 'b']
+['a', 'b', 'b', 'b', 'b', 'b']
+(Player A Score, Player B Score):  (12, 24)
+Total Nodes Expanded for Player A:  306244
+Total Nodes Expanded for Player B:  328457
+Average Total Nodes Expanded:  18134.314285714285
+Average Nodes Expanded for Player A:  18014.352941176472
+Average Nodes Expanded for Player B:  18247.61111111111
+Average Turn Time:  2.815166455200649
+Average Turn Time for Player A:  2.7640464675387193
+Average Turn Time for Player B:  2.8634464435480265
+------------------------ Resources/Narvik.txt ---------------------------
+-----------Player A: MiniMax, PlayerB: MiniMax-----------
+------------
+['a', 'b', 'b', 'b', 'b', 'a']
+['b', 'a', 'a', 'b', 'a', 'b']
+['a', 'a', 'a', 'a', 'b', 'b']
+['a', 'a', 'a', 'a', 'b', 'a']
+['a', 'a', 'a', 'a', 'a', 'a']
+['b', 'a', 'a', 'a', 'a', 'a']
+(Player A Score, Player B Score):  (1299, 501)
+Total Nodes Expanded for Player A:  371584
+Total Nodes Expanded for Player B:  387110
+Average Total Nodes Expanded:  21676.97142857143
+Average Nodes Expanded for Player A:  21857.882352941175
+Average Nodes Expanded for Player B:  21506.11111111111
+Average Turn Time:  3.575634139995457
+Average Turn Time for Player A:  3.5863286661384497
+Average Turn Time for Player B:  3.565533754193742
+-----------Player A: AlphaBeta, PlayerB: AlphaBeta-----------
+------------
+['a', 'b', 'b', 'b', 'b', 'a']
+['b', 'a', 'a', 'b', 'a', 'b']
+['a', 'a', 'a', 'a', 'b', 'b']
+['a', 'a', 'a', 'a', 'b', 'a']
+['a', 'a', 'a', 'a', 'a', 'a']
+['b', 'a', 'a', 'a', 'a', 'a']
+(Player A Score, Player B Score):  (1299, 501)
+Total Nodes Expanded for Player A:  322857
+Total Nodes Expanded for Player B:  291055
+Average Total Nodes Expanded:  17540.342857142856
+Average Nodes Expanded for Player A:  18991.58823529412
+Average Nodes Expanded for Player B:  16169.722222222223
+Average Turn Time:  2.9574136057546183
+Average Turn Time for Player A:  3.20685513694933
+Average Turn Time for Player B:  2.7218299374040575
+-----------Player A: MiniMax, PlayerB: AlphaBeta-----------
+------------
+['a', 'b', 'b', 'b', 'b', 'a']
+['b', 'a', 'a', 'b', 'a', 'b']
+['a', 'a', 'a', 'a', 'b', 'b']
+['a', 'a', 'a', 'a', 'b', 'a']
+['a', 'a', 'a', 'a', 'a', 'a']
+['b', 'a', 'a', 'a', 'a', 'a']
+(Player A Score, Player B Score):  (1299, 501)
+Total Nodes Expanded for Player A:  371584
+Total Nodes Expanded for Player B:  291055
+Average Total Nodes Expanded:  18932.542857142857
+Average Nodes Expanded for Player A:  21857.882352941175
+Average Nodes Expanded for Player B:  16169.722222222223
+Average Turn Time:  3.221087235374989
+Average Turn Time for Player A:  3.7221069659173254
+Average Turn Time for Player B:  2.7479019343072273
+-----------Player A: AlphaBeta, PlayerB: MiniMax-----------
+------------
+['a', 'b', 'b', 'b', 'b', 'a']
+['b', 'a', 'a', 'b', 'a', 'b']
+['a', 'a', 'a', 'a', 'b', 'b']
+['a', 'a', 'a', 'a', 'b', 'a']
+['a', 'a', 'a', 'a', 'a', 'a']
+['b', 'a', 'a', 'a', 'a', 'a']
+(Player A Score, Player B Score):  (1299, 501)
+Total Nodes Expanded for Player A:  322857
+Total Nodes Expanded for Player B:  387110
+Average Total Nodes Expanded:  20284.77142857143
+Average Nodes Expanded for Player A:  18991.58823529412
+Average Nodes Expanded for Player B:  21506.11111111111
+Average Turn Time:  3.3842243222411135
+Average Turn Time for Player A:  3.155295660155469
+Average Turn Time for Player B:  3.600434725322
+------------------------ Resources/Westerplatte.txt ---------------------------
+-----------Player A: MiniMax, PlayerB: MiniMax-----------
+------------
+['a', 'b', 'a', 'b', 'a', 'b']
+['b', 'a', 'b', 'a', 'b', 'a']
+['a', 'b', 'b', 'b', 'a', 'b']
+['a', 'b', 'b', 'b', 'b', 'b']
+['b', 'a', 'b', 'a', 'b', 'b']
+['b', 'b', 'a', 'b', 'b', 'a']
+(Player A Score, Player B Score):  (26, 46)
+Total Nodes Expanded for Player A:  413525
+Total Nodes Expanded for Player B:  434628
+Average Total Nodes Expanded:  24232.942857142858
+Average Nodes Expanded for Player A:  24325.0
+Average Nodes Expanded for Player B:  24146.0
+Average Turn Time:  5.4259928930551595
+Average Turn Time for Player A:  5.418578608652939
+Average Turn Time for Player B:  5.432995272768368
+-----------Player A: AlphaBeta, PlayerB: AlphaBeta-----------
+------------
+['a', 'b', 'a', 'b', 'a', 'b']
+['b', 'a', 'b', 'a', 'b', 'a']
+['a', 'b', 'b', 'b', 'a', 'b']
+['a', 'b', 'b', 'b', 'b', 'b']
+['b', 'a', 'b', 'a', 'b', 'b']
+['b', 'b', 'a', 'b', 'b', 'a']
+(Player A Score, Player B Score):  (26, 46)
+Total Nodes Expanded for Player A:  307503
+Total Nodes Expanded for Player B:  350960
+Average Total Nodes Expanded:  18813.22857142857
+Average Nodes Expanded for Player A:  18088.41176470588
+Average Nodes Expanded for Player B:  19497.777777777777
+Average Turn Time:  4.132290585549254
+Average Turn Time for Player A:  3.955450710931125
+Average Turn Time for Player B:  4.299306022688597
+-----------Player A: MiniMax, PlayerB: AlphaBeta-----------
+------------
+['a', 'b', 'a', 'b', 'a', 'b']
+['b', 'a', 'b', 'a', 'b', 'a']
+['a', 'b', 'b', 'b', 'a', 'b']
+['a', 'b', 'b', 'b', 'b', 'b']
+['b', 'a', 'b', 'a', 'b', 'b']
+['b', 'b', 'a', 'b', 'b', 'a']
+(Player A Score, Player B Score):  (26, 46)
+Total Nodes Expanded for Player A:  413525
+Total Nodes Expanded for Player B:  350960
+Average Total Nodes Expanded:  21842.428571428572
+Average Nodes Expanded for Player A:  24325.0
+Average Nodes Expanded for Player B:  19497.777777777777
+Average Turn Time:  3.7469575496062006
+Average Turn Time for Player A:  4.1053004509371664
+Average Turn Time for Player B:  3.408522587238066
+-----------Player A: AlphaBeta, PlayerB: MiniMax-----------
+------------
+['a', 'b', 'a', 'b', 'a', 'b']
+['b', 'a', 'b', 'a', 'b', 'a']
+['a', 'b', 'b', 'b', 'a', 'b']
+['a', 'b', 'b', 'b', 'b', 'b']
+['b', 'a', 'b', 'a', 'b', 'b']
+['b', 'b', 'a', 'b', 'b', 'a']
+(Player A Score, Player B Score):  (26, 46)
+Total Nodes Expanded for Player A:  307503
+Total Nodes Expanded for Player B:  434628
+Average Total Nodes Expanded:  21203.742857142857
+Average Nodes Expanded for Player A:  18088.41176470588
+Average Nodes Expanded for Player B:  24146.0
+Average Turn Time:  3.51245904850127
+Average Turn Time for Player A:  2.991986401978064
+Average Turn Time for Player B:  4.004016547995409
+------------------------ Resources/Smolensk.txt ---------------------------
+-----------Player A: MiniMax, PlayerB: MiniMax-----------
+------------
+['b', 'a', 'a', 'a', 'b', 'b']
+['b', 'a', 'a', 'a', 'b', 'a']
+['b', 'a', 'a', 'a', 'a', 'b']
+['b', 'b', 'a', 'a', 'b', 'b']
+['b', 'b', 'a', 'a', 'a', 'b']
+['a', 'b', 'a', 'b', 'a', 'b']
+(Player A Score, Player B Score):  (944, 709)
+Total Nodes Expanded for Player A:  406178
+Total Nodes Expanded for Player B:  384841
+Average Total Nodes Expanded:  22600.542857142857
+Average Nodes Expanded for Player A:  23892.823529411766
+Average Nodes Expanded for Player B:  21380.055555555555
+Average Turn Time:  3.745146217629281
+Average Turn Time for Player A:  3.780438839628165
+Average Turn Time for Player B:  3.7118142968525567
+-----------Player A: AlphaBeta, PlayerB: AlphaBeta-----------
+------------
+['b', 'a', 'a', 'a', 'b', 'b']
+['b', 'a', 'a', 'a', 'b', 'a']
+['b', 'a', 'a', 'a', 'a', 'b']
+['b', 'b', 'a', 'a', 'b', 'b']
+['b', 'b', 'a', 'a', 'a', 'b']
+['a', 'b', 'a', 'b', 'a', 'b']
+(Player A Score, Player B Score):  (944, 709)
+Total Nodes Expanded for Player A:  268118
+Total Nodes Expanded for Player B:  200806
+Average Total Nodes Expanded:  13397.828571428572
+Average Nodes Expanded for Player A:  15771.64705882353
+Average Nodes Expanded for Player B:  11155.888888888889
+Average Turn Time:  2.1810139361095673
+Average Turn Time for Player A:  2.473262142996512
+Average Turn Time for Player B:  1.9050017407163422
+-----------Player A: MiniMax, PlayerB: AlphaBeta-----------
+------------
+['b', 'a', 'a', 'a', 'b', 'b']
+['b', 'a', 'a', 'a', 'b', 'a']
+['b', 'a', 'a', 'a', 'a', 'b']
+['b', 'b', 'a', 'a', 'b', 'b']
+['b', 'b', 'a', 'a', 'a', 'b']
+['a', 'b', 'a', 'b', 'a', 'b']
+(Player A Score, Player B Score):  (944, 709)
+Total Nodes Expanded for Player A:  406178
+Total Nodes Expanded for Player B:  200806
+Average Total Nodes Expanded:  17342.4
+Average Nodes Expanded for Player A:  23892.823529411766
+Average Nodes Expanded for Player B:  11155.888888888889
+Average Turn Time:  2.8603453136799546
+Average Turn Time for Player A:  3.8046643473196182
+Average Turn Time for Player B:  1.9684884485758276
+-----------Player A: AlphaBeta, PlayerB: MiniMax-----------
+------------
+['b', 'a', 'a', 'a', 'b', 'b']
+['b', 'a', 'a', 'a', 'b', 'a']
+['b', 'a', 'a', 'a', 'a', 'b']
+['b', 'b', 'a', 'a', 'b', 'b']
+['b', 'b', 'a', 'a', 'a', 'b']
+['a', 'b', 'a', 'b', 'a', 'b']
+(Player A Score, Player B Score):  (944, 709)
+Total Nodes Expanded for Player A:  268118
+Total Nodes Expanded for Player B:  384841
+Average Total Nodes Expanded:  18655.97142857143
+Average Nodes Expanded for Player A:  15771.64705882353
+Average Nodes Expanded for Player B:  21380.055555555555
+Average Turn Time:  3.1870885797405726
+Average Turn Time for Player A:  2.5792645711140616
+Average Turn Time for Player B:  3.7611445878878333
+
+Process finished with exit code 0

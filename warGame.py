@@ -607,6 +607,7 @@ def firstMove(gameInstance, depth, alpha):
             for c in range(0, len(gameInstance.tempBoard2State[r])):
                 gameInstance.tempBoard2State[r][c]='a'
                 result=minimax(gameInstance, (r,c), depth, True, list(gameInstance.tempBoard2State),0,gameInstance.tempBoard2[r][c], playerMove, 'para',(r,c))
+                #print(result)
                 if total < result[0]:
                     total=result[0]
                     first[0]=playerMove[0]
@@ -614,7 +615,7 @@ def firstMove(gameInstance, depth, alpha):
 
 
         gameInstance.tempBoard2State=deepcopy(visitReplace)
-        print('lllllllllllllllllllllllllllllll',first[0])
+        #print('lllllllllllllllllllllllllllllll',first[0])
         return first[0]
     else:
         playerMove=[(-1,-1), 'ERROR',-1000,1000]
@@ -629,10 +630,10 @@ def firstMove(gameInstance, depth, alpha):
                     total=result[0]
                     first[0]=playerMove[0]
                 gameInstance.tempBoard2State=deepcopy(visitReplace)
-                print('Player A min, max===',playerMove[2],playerMove[2])
+                #print('Player A min, max===',playerMove[2],playerMove[2])
 
         gameInstance.tempBoard2State=deepcopy(visitReplace)
-        print('lllllllllllllllllllllllllllllll',first[0])
+        #print('lllllllllllllllllllllllllllllll',first[0])
         return first[0]
 
     # x=0
@@ -648,8 +649,8 @@ def firstMove(gameInstance, depth, alpha):
 
 
 
-
-
+global first
+first=(-1,-1)
 def ageOfBlitz(nameFile):
 
     global counter
@@ -687,10 +688,12 @@ def ageOfBlitz(nameFile):
 
     playerMove=[(-1,-1), 'ERROR']
     playerTurn=False
-
+    global first
+    first=(-1,-1)
     #determine first move
-    #node=firstMove(gameInstance, depth, False)
-    node=(0,0)
+    first=firstMove(gameInstance, depth, False)
+    node=first
+    #node=(0,0)
     #update gameState
     gameInstance.tempBoard2State[node[0]][node[1]]='a'
     #while(moves are possible)
@@ -704,7 +707,7 @@ def ageOfBlitz(nameFile):
             averageTimeA.append(stop-start)
             playerA=playerA+counter-temp
             averageListA.append(counter-temp)
-            #print(counter-temp)
+           #print(counter-temp)
             temp=counter
             node=playerMove[0]
             #print('RESULT A')
@@ -761,7 +764,7 @@ def ageOfBlitz(nameFile):
     print('Average Turn Time for Player A: ',averageATime)
     print('Average Turn Time for Player B: ', averageBTime)
 
-    return 1
+    return first
 
 
 
@@ -805,10 +808,15 @@ def ageOfBlitzAlphaAlpha(nameFile):
 
     playerMove=[(-1,-1), 'ERROR',-1000, 1000]
     playerTurn=False
+    global first
 
     #determine first move
+    if first == (-1,-1):
+        print('ERROR')
+        return
+    node=first
     #node=firstMove(gameInstance, depth, True)
-    node=(5,2)
+    #node=(5,2)
     #update gameState
     gameInstance.tempBoard2State[node[0]][node[1]]='a'
     #while(moves are possible)
@@ -934,9 +942,16 @@ def ageOfBlitzMinAlpha(nameFile):
     playerMove=[(-1,-1), 'ERROR',-1000, 1000]
     playerTurn=False
 
+    global first
+
     #determine first move
-    #node=firstMove(gameInstance, depth, True)
-    node=(5,2)
+    if first == (-1,-1):
+        print('ERROR')
+        return
+    node=first
+    #determine first move
+    #node=firstMove(gameInstance, depth, False)
+    #node=(5,2)
     #update gameState
     gameInstance.tempBoard2State[node[0]][node[1]]='a'
     #while(moves are possible)
@@ -1060,10 +1075,16 @@ def ageOfBlitzAlphaMin(nameFile):
 
     playerMove=[(-1,-1), 'ERROR',-1000, 1000]
     playerTurn=False
+    global first
 
     #determine first move
+    if first == (-1,-1):
+        print('ERROR')
+        return
+    node=first
+    #determine first move
     #node=firstMove(gameInstance, depth, True)
-    node=(5,2)
+    #node=(5,2)
     #update gameState
     gameInstance.tempBoard2State[node[0]][node[1]]='a'
     #while(moves are possible)
@@ -1331,29 +1352,29 @@ def RUNALL(nameFile):
     start = timeit.default_timer()
     ageOfBlitz(nameFile)
     stop = timeit.default_timer()
-    print(start-stop)
-    print(counter)
+    #print(start-stop)
+    #print(counter)
     counter=0
     print('-----------Player A: AlphaBeta, PlayerB: AlphaBeta-----------')
     start = timeit.default_timer()
     ageOfBlitzAlphaAlpha(nameFile)
     stop = timeit.default_timer()
-    print(start-stop)
-    print(counter)
+    #print(start-stop)
+    #print(counter)
     counter=0
     print('-----------Player A: MiniMax, PlayerB: AlphaBeta-----------')
     start = timeit.default_timer()
     ageOfBlitzMinAlpha(nameFile)
     stop = timeit.default_timer()
-    print(start-stop)
-    print(counter)
+    #print(start-stop)
+    #print(counter)
     counter=0
     print('-----------Player A: AlphaBeta, PlayerB: MiniMax-----------')
     start = timeit.default_timer()
     ageOfBlitzAlphaMin(nameFile)
     stop = timeit.default_timer()
-    print(start-stop)
-    print(counter)
+    #print(start-stop)
+    #print(counter)
     counter=0
 
 

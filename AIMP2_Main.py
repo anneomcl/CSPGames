@@ -7,6 +7,7 @@ from matplotlib import collections  as mc
 import timeit
 from matplotlib.backends.backend_pdf import PdfPages
 
+
 def pointGenerator(N):
     size = N
     pointsList = []
@@ -217,13 +218,16 @@ def checkColor(vert, adjMatrix, colorList, color, vertNum):
             return False
     return True
 
-
+global counter
+counter=0
 def graphColor(adjMatrix, colorNum, colorList, vertNum, vert, total):
+    global counter
     if vert == vertNum:
         return True
 
     for c in range(1, colorNum+1):
         if checkColor(vert, adjMatrix, colorList, c, vertNum)== True:
+            counter=counter+1
             colorList[vert]=c
             #print(total)
             if graphColor(adjMatrix, colorNum, colorList, vertNum, vert+1, total+1) == True:
@@ -255,11 +259,13 @@ def mainSolutionB(adjMatrix, vertNum, colorNum, sortedVertList):
 
 
 def graphColor2(adjMatrix, colorNum, colorList, vertNum, vert, sortedVertList, total):
+    global counter
     if vert == vertNum:
         return True
 
     for c in range(1, colorNum+1):
         if checkColor(sortedVertList[vert][0], adjMatrix, colorList, c, vertNum)== True:
+            counter=counter+1
             colorList[sortedVertList[vert][0]]=c
             #print(total)
             if graphColor2(adjMatrix, colorNum, colorList, vertNum, vert+1, sortedVertList, total+1) == True:
@@ -296,11 +302,12 @@ def plotter(colorList, graph, num):
     colormap = np.array(['r', 'g', 'b', 'c'])
 
 
-    with PdfPages('multipage_pdf2'+str(num)+'.pdf') as pdf:
-        for elem in graph[1]:
-            listX.append(elem[0])
-            listY.append(elem[1])
-        lines = graph[0]
+
+    for elem in graph[1]:
+        listX.append(elem[0])
+        listY.append(elem[1])
+    lines = graph[0]
+    with PdfPages('Graph_size_'+str(len(listX))+'.pdf') as pdf:
             #[[(0, 1), (1, 1)], [(2, 3), (3, 3)], [(1, 2), (1, 3)]]
         lc = mc.LineCollection(lines, linewidths=.2)
         fig, ax = pl.subplots()
@@ -310,12 +317,12 @@ def plotter(colorList, graph, num):
         #pl.axis([-1, 4, -1, 4])
         pl.axis([-.1, 1.1, -.1, 1.1])
         #pl.show()
-        pl.title('Page One')
+        pl.title('Graph of vertex size: '+str(len(listX)))
         pdf.savefig()
         pl.close()
 
         d = pdf.infodict()
-        d['Title'] = 'Multipage PDF Example'
+        d['Title'] = 'Graphs'
         d['Author'] = u'Jouni K. Sepp\xe4nen'
         d['Subject'] = 'How to create a multipage pdf file and set its metadata'
         d['Keywords'] = 'PdfPages multipage keywords author title subject'
@@ -323,29 +330,41 @@ def plotter(colorList, graph, num):
 
     return
 
+global limit
+limit=0
+
+
 def reportGenerator(N, num):
+    global counter
     graph=list(graphGenerator(N))
     adjMatrix=list(AdjMatrixBuilder(graph))
     sortedVertList=list(reversed(sorted(MRVHeursitc(adjMatrix), key=operator.itemgetter(1))))
 
     colorList=[]
     start = timeit.default_timer()
-    #colorList=mainSolutionA(adjMatrix, N, 4)
-    #colorList=mainSolutionB(adjMatrix, N, 4, sortedVertList)
-
-    mainSolutionA(adjMatrix, N, 4)
+    counter=0
+    colorList=mainSolutionA(adjMatrix, N, 4)
+    CA=counter
+    counter=0
     stop = timeit.default_timer()
     A=stop - start
 
+    counter=0
     start = timeit.default_timer()
-    #colorList=mainSolutionA(adjMatrix, N, 4)
-    #colorList=mainSolutionB(adjMatrix, N, 4, sortedVertList)
-
     colorList=mainSolutionB(adjMatrix, N, 4, sortedVertList)
+    CB=counter
+    counter=0
     stop = timeit.default_timer()
     B=stop - start
-    #plotter(colorList, graph, num)
-    return (A,B)
+
+
+    global limit
+    if N==limit:
+        pass
+    else:
+        plotter(colorList, graph, num)
+        limit=N
+    return (A,B, len(graph[0]), CA, CB)
     # vert=0
     # for elem in colorList:
     #
@@ -354,22 +373,116 @@ def reportGenerator(N, num):
     #         break
     #     vert=vert+1
 
-
+global plotData
+plotData=[]
 def reportRunner(R, N):
+    global plotData
+
     A=0
     B=0
+    E=0
+    CA=0
+    CB=0
     for x in range(1, R):
         #print(x)
-        A=A+reportGenerator(N, x)[0]
-        B=B+reportGenerator(N, x)[1]
+        sthex=reportGenerator(N, x)
+        A=A+sthex[0]
+        B=B+sthex[1]
+        E=E+sthex[2]
+        CA=CA+sthex[3]
+        CB=CB+sthex[4]
+    print('Average Time no forward checking :', A/R)
+    print('Average Time with forward checking :', B/R)
+    print('Average Number Edges :', E/R)
+    print('Average Number of Assignments no forward checking :', CA/R)
+    print('Average Number of Assignments with forward checking :', CB/R)
+    plotData.append((
+            N,
+            (A/R),
+            (B/R),
+            (E/R),
+            (CA/R),
+            (CB/R)
 
-    print(A/R)
-    print(B/R)
+    ))
 
 
-for x in range(3, 25):
+for x in range(3, 30):
     string="------- the average runtimes for "+str(x)
     print(string)
     reportRunner(70, x)
+a=[] #nodes
+b=[] #timeA
+c=[] #timeB
+d=[] #edges
+e=[]
+f=[]
+for elem in plotData:
+    a.append(elem[0])
+    b.append(elem[1])
+    c.append(elem[2])
+    d.append(elem[3])
+    e.append(elem[4])
+    f.append(elem[5])
 
 
+# pl.plot(a, b, 'r--',a, c, 'g--')
+#
+# pl.plot(a, c, 'r--',a, d, 'g--')
+#
+# pl.plot(a, e, 'r--',a, f, 'g--'15
+with PdfPages('PLOTS_3to30_2.pdf') as pdf:
+    pl.figure()
+    pl.plot(a, b, 'r--',a, c, 'g--')
+    pl.title('Graph of NODES VS TIME')
+    pdf.savefig()  # saves the current figure into a pdf page
+    pl.close()
+
+    pl.rc('text', usetex=False)
+
+
+    pl.plot(a, d, 'g--')
+    pl.title('Graph of NODES VS EDGES')
+    pdf.savefig()
+    pl.close()
+
+    pl.rc('text', usetex=False)
+
+    pl.plot(a, e, 'r--',a, f, 'g--')
+    pl.title('Graph of NODES VS ASSIGNMENTS')
+    pdf.savefig()  # or you can pass a Figure object to pdf.savefig
+    pl.close()
+
+    # We can also set the file's metadata via the PdfPages object:
+    d = pdf.infodict()
+    d['Title'] = 'Multipage PDF Example'
+    d['Author'] = u'Jouni K. Sepp\xe4nen'
+    d['Subject'] = 'How to create a multipage pdf file and set its metadata'
+
+    print("DONE")
+
+
+#
+# with PdfPages('PLOTS.pdf') as pdf:
+#
+#     pl.figure(figsize=(3, 3))
+#     pl.plot(a, b, 'r--',a, c, 'g--')
+#     pl.title('Graph of NODES VS TIME')
+#     pl.savefig()
+#     pl.close()
+#
+#     pl.plot(a, c, 'r--',a, d, 'g--')
+#     pl.title('Graph of EDGES VS TIME')
+#     pl.savefig()
+#     pl.close()
+#
+#     pl.plot(a, e, 'r--',a, f, 'g--')
+#     pl.title('Graph of ASSIGNMENTS VS TIME')
+#     pl.savefig()
+#     pl.close()
+#
+#     d = pdf.infodict()
+#     d['Title'] = 'Graphs'
+#     d['Author'] = u'Jouni K. Sepp\xe4nen'
+#     d['Subject'] = 'How to create a multipage pdf file and set its metadata'
+#     d['Keywords'] = 'PdfPages multipage keywords author title subject'
