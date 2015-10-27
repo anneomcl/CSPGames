@@ -324,7 +324,7 @@ def plotter(colorList, graph, num):
         listX.append(elem[0])
         listY.append(elem[1])
     lines = graph[0]
-    with PdfPages('Graph_size_'+str(len(listX))+'.pdf') as pdf:
+    with PdfPages('Graph_size_withCheck_'+str(len(listX))+'.pdf') as pdf:
             #[[(0, 1), (1, 1)], [(2, 3), (3, 3)], [(1, 2), (1, 3)]]
         lc = mc.LineCollection(lines, linewidths=.2)
         fig, ax = pl.subplots()
@@ -360,7 +360,7 @@ def reportGenerator(N, num):
     colorList=[]
     start = timeit.default_timer()
     counter=0
-    colorList=mainSolutionA(adjMatrix, N, 4)
+    colorList2=mainSolutionA(adjMatrix, N, 4)
     CA=counter
     counter=0
     stop = timeit.default_timer()
@@ -379,16 +379,18 @@ def reportGenerator(N, num):
     if N==limit:
         pass
     else:
-        plotter(colorList, graph, num)
+        plotter(colorList2, graph, num)
         limit=N
-    return (A,B, len(graph[0]), CA, CB)
+
     # vert=0
     # for elem in colorList:
     #
     #     if checkColor(vert, adjMatrix, colorList, elem, N)== False:
     #         print("FAILED")
-    #         break
+    #         person = input('you got rekt: ')
     #     vert=vert+1
+
+    return (A,B, len(graph[0]), CA, CB)
 
 global plotData
 plotData=[]
