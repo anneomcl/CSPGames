@@ -257,13 +257,30 @@ def mainSolutionB(adjMatrix, vertNum, colorNum, sortedVertList):
     #print(colorList)
     return colorList
 
-
+from copy import deepcopy
+from collections import Counter
 def graphColor2(adjMatrix, colorNum, colorList, vertNum, vert, sortedVertList, total):
     global counter
     if vert == vertNum:
         return True
+    colorIteration=[]
 
+
+    temp=deepcopy(colorList)
+    countedDict=Counter(temp)
+
+    sorted_x = sorted(countedDict.items(), key=operator.itemgetter(1), reverse=True)
+
+    for elem in sorted_x:
+        colorIteration.append(elem[0])
     for c in range(1, colorNum+1):
+        if c in colorIteration:
+            pass
+        else:
+            colorIteration.append(c)
+    colorIteration=reversed(colorIteration)
+
+    for c in colorIteration:
         if checkColor(sortedVertList[vert][0], adjMatrix, colorList, c, vertNum)== True:
             counter=counter+1
             colorList[sortedVertList[vert][0]]=c
@@ -407,7 +424,7 @@ def reportRunner(R, N):
     ))
 
 
-for x in range(3, 30):
+for x in range(3, 20):
     string="------- the average runtimes for "+str(x)
     print(string)
     reportRunner(70, x)
@@ -431,7 +448,7 @@ for elem in plotData:
 # pl.plot(a, c, 'r--',a, d, 'g--')
 #
 # pl.plot(a, e, 'r--',a, f, 'g--'15
-with PdfPages('PLOTS_3to30_2.pdf') as pdf:
+with PdfPages('GraphColoring_with_additional_LCV_3to20.pdf') as pdf:
     pl.figure()
     pl.plot(a, b, 'r--',a, c, 'g--')
     pl.title('Graph of NODES VS TIME')
